@@ -1,0 +1,52 @@
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { useState } from "react";
+import Features from './features';
+import FeaturesUser from './featuresUser';
+
+const GetStarted: React.FC = () => {
+
+    const [userType, setUserType] = useState("business");
+
+  return (
+    <section className="flex-1  px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+              <div className="h-[100vh] bg-white py-8">
+      {/* Heading + Dropdown */}
+      <div className="text-center ">
+              <div className="inline-flex items-center justify-center text-4xl font-bold text-gray-900 gap-2">
+                <span>Get started as a</span>
+               <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full p-1">
+                      <button
+                        onClick={() => setUserType("business")}
+                        className={`px-5 py-2 rounded-full text-lg font-semibold transition ${
+                          userType === "business"
+                            ? "bg-blue-600 text-white"
+                            : "text-gray-700 hover:bg-white"
+                        }`}
+                      >
+                        Business
+                      </button>
+                      <button
+                        onClick={() => setUserType("individual")}
+                        className={`px-5 py-2 rounded-full text-lg font-semibold transition ${
+                          userType === "individual"
+                            ? "bg-blue-600 text-white"
+                            : "text-gray-700 hover:bg-white"
+                        }`}
+                      >
+                        Individual
+                      </button>
+                    </div>
+
+
+              </div>
+            </div>
+
+      {/* Conditional Component */}
+      {userType === "business" ? <Features /> : <FeaturesUser />}
+    </div>
+    </section>
+  );
+};
+
+export default GetStarted;

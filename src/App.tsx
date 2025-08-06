@@ -1,0 +1,42 @@
+import React from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Header from './components/Header';
+import WebOffering from './components/Offerings';
+import WhosItFor from './components/WhosItFor';
+import Bot from './components/Bot_offering';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HeroSection from './components/Hero';
+import Business from './components/business.tsx'; // New page
+import Personal from './components/personal.tsx';
+import GetStarted from './components/GetStarted.tsx';
+
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Router>
+        <div className="min-h-screen bg-white dark:bg-gray-900 duration-300">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeroSection />
+                  <WhosItFor />
+                  <WebOffering />
+                  <Bot />
+                  <GetStarted />
+                </>
+              }
+            />
+            <Route path="/business" element={<Business />} />
+            <Route path="/personal" element={<Personal />} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+export default App;
