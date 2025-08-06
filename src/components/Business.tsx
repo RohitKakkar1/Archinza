@@ -14,8 +14,10 @@ const Business = () => {
     <Bus_Offering />
     <NetworkSection />
     <SectionToggle />
-          <section id="who-is-it-for"><WhoIsItFor /></section>
+    <section id="who-is-it-for"><WhoIsItFor /></section>
           <section id="features"><Features /></section>
+                    
+
           <section id="benefits"><Benefits /></section>
 
     </section>
