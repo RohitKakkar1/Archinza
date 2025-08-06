@@ -6,8 +6,9 @@ import WhosItFor from './components/WhosItFor';
 import Bot from './components/Bot_offering';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroSection from './components/Hero';
-import Business from './components/business.tsx'; // New page
-import Personal from './components/personal.tsx';
+import Personal from './components/Personal.tsx';
+import Business from './components/Business.tsx'; // New page
+
 import GetStarted from './components/GetStarted.tsx';
 
 
