@@ -55,7 +55,24 @@ useEffect(() => {
 
 
   return (
-    <section className="block md:hidden w-full px-4 pt-12 overflow-hidden">
+    <section className="block bg-gray-100 dark:bg-gray-800 pb-12 md:hidden w-full px-4 pt-12 overflow-hidden">
+        <div className="max-w-full mt-2 px-4">
+            <div className="font-sans text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl font-semibold mb-4 leading-snug">
+                <span className="text-blue-600 font-bold dark:text-blue-400">Find</span>
+                <span className="mx-2 dark:text-white">and</span>
+                <span className="text-blue-600 font-bold dark:text-blue-400">be found</span>
+<span className="block text-black dark:text-white mt-2 text-lg sm:text-xl font-normal">
+                    at every step of your Design & Build journey.
+                </span>
+                </h2>
+                <p className="text-lg sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-md mx-auto">
+                Discovery made easy using Archinza’s intelligent AI solutions.
+                </p>
+            </div>
+            </div>
+
+
       <div
         ref={containerRef}
         className="flex gap-4 w-full overflow-x-hidden"

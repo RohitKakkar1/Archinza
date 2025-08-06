@@ -20,7 +20,7 @@ const WhosItFor: React.FC = () => {
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Archinza for Businesses */}
-          <div className="space-y-6 rounded-2xl shadow-lg p-8">
+<div className="space-y-6 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.03)]">
             {/* Image Container */}
             <div className="relative aspect-[1.9]  rounded-2xl overflow-hidden ">
               {/* Desktop Image */}
@@ -76,7 +76,7 @@ const WhosItFor: React.FC = () => {
           </div>
 
           {/* Archinza for Personal Use */}
-          <div className="space-y-6 rounded-2xl shadow-lg p-8">
+<div className="space-y-6 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.03)]">
             {/* Image Container */}
             <div className="relative  aspect-[1.9]  rounded-2xl overflow-hidden ">
               {/* Desktop Image */}

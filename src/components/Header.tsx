@@ -47,29 +47,29 @@ const Header: React.FC = () => {
 
         {/* MOBILE MENU */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-md py-4 flex flex-col items-center space-y-4 lg:hidden z-50">
+          <div className="absolute top-full h-[100vh] left-0 w-full bg-white/95 dark:bg-gray-900/95 shadow-md py-4 flex flex-col items-start pl-8 space-y-4 lg:hidden z-50">
             <NavLink
               to="/business"
               onClick={() => setMenuOpen(false)}
-              className="text-gray-800 dark:text-white hover:text-blue-600"
+className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
             >
               For Businesses
             </NavLink>
             <NavLink
               to="/personal"
               onClick={() => setMenuOpen(false)}
-              className="text-gray-800 dark:text-white hover:text-blue-600"
+className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
             >
               For Individuals
             </NavLink>
             <div>
               <p className="text-gray-800 dark:text-white">About</p>
-              <div className="flex flex-col items-center mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-300">
+              <div className="flex flex-col items-center mt-2 space-y-1 text-lg text-gray-600 dark:text-gray-300">
                 <a href="#">Team</a>
                 <a href="#">Vision</a>
               </div>
             </div>
-            <a href="#" className="text-gray-800 dark:text-white hover:text-blue-600">
+            <a href="#" className="text-gray-800 dark:text-white hover:text-blue-600 text-lg">
               Blogs
             </a>
             <Link to="http://174.138.123.146:9028/register" target="_blank">
@@ -77,6 +77,24 @@ const Header: React.FC = () => {
                 Sign Up
               </button>
             </Link>
+            <Link to="http://174.138.123.146:9028/login" target="_blank">
+              <button className="px-4 py-2 mt-2 bg-white text-blue-700 rounded-full hover:bg-blue-700">
+                Login
+              </button>
+            </Link>
+            
+             {/* Dark mode toggle */}
+            <div className="flex items-center justify-start pt-3">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center space-x-2 text-gray-800 dark:text-white"
+              >
+                {isDark ? <Moon size={18} /> : <Sun size={18} />}
+                <span className="text-sm">
+                  {isDark ? "Dark Mode" : "Light Mode"}
+                </span>
+              </button>
+            </div>
           </div>
         )}
 
