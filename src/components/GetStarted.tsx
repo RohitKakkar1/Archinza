@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useState } from "react";
 import Features from './features';
-import FeaturesUser from './featuresUser';
+import FeaturesUser from './FeaturesUser.tsx';
 
 const GetStarted: React.FC = () => {
 
