@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroSection from './components/Hero';
 import Personal from './components/Personal.tsx';
 import Business from './components/Business.tsx'; // New page
+import MobileHeroSection from './components/MobileHeroSection.tsx';
 
 import GetStarted from './components/GetStarted.tsx';
 
@@ -23,11 +24,22 @@ function App() {
               path="/"
               element={
                 <>
-                  <HeroSection />
+                  <>
+                    {/* Desktop View */}
+                    <div className="hidden md:block">
+                      <HeroSection />
+                    </div>
+
+                    {/* Mobile View */}
+                    <div className="block pt-20  md:hidden">
+                      <MobileHeroSection />
+                    </div>
+                  </>
+
                   <WhosItFor />
                   <WebOffering />
                   <Bot />
-                  <GetStarted />
+                  {/* <GetStarted /> */}
                 </>
               }
             />

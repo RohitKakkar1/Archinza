@@ -1,95 +1,143 @@
-import React from 'react';
-import { Sun, Moon } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sun, Moon, Menu, X, LogIn } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-
-import { ArrowRight } from 'lucide-react';
 const Header: React.FC = () => {
   const { isDark, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-  <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 sm:px-6 lg:px-8 py-4 rounded-b-xl">
-  
-    <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 sm:px-6 lg:px-8 py-4 rounded-b-xl">
+      <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-between">
+        
+        {/* MOBILE HEADER */}
+        <div className="w-full flex items-center justify-between lg:hidden">
+          {/* Hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
 
-      <Link to="" className="">
-      <div className="text-xl font-bold">
-        {/* Light Mode Logo */}
-        <img
-          src="/Archinza-Logo-light.png"
-          alt="Archinza Logo Light"
-          className="h-8 w-auto dark:hidden"
-        />
+          {/* Logo */}
+          <Link to="/" className="flex-1 text-center">
+            <img
+              src="/Archinza-Logo-light.png"
+              alt="Archinza Logo Light"
+              className="h-8 mx-auto dark:hidden"
+            />
+            <img
+              src="/Archinza-Logo-dark.png"
+              alt="Archinza Logo Dark"
+              className="h-8 mx-auto hidden dark:block"
+            />
+          </Link>
 
-        {/* Dark Mode Logo */}
-        <img
-          src="/Archinza-Logo-dark.png"
-          alt="Archinza Logo Dark"
-          className="h-8 w-auto hidden dark:block"
-        />
-      </div>        
+          {/* Login Icon */}
+          <Link
+            to="http://174.138.123.146:9028/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LogIn className="w-6 h-6 ml-auto text-gray-800 dark:text-white" />
+          </Link>
+        </div>
 
-      </Link>
+        {/* MOBILE MENU */}
+        {menuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-md py-4 flex flex-col items-center space-y-4 lg:hidden z-50">
+            <NavLink
+              to="/business"
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-800 dark:text-white hover:text-blue-600"
+            >
+              For Businesses
+            </NavLink>
+            <NavLink
+              to="/personal"
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-800 dark:text-white hover:text-blue-600"
+            >
+              For Individuals
+            </NavLink>
+            <div>
+              <p className="text-gray-800 dark:text-white">About</p>
+              <div className="flex flex-col items-center mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-300">
+                <a href="#">Team</a>
+                <a href="#">Vision</a>
+              </div>
+            </div>
+            <a href="#" className="text-gray-800 dark:text-white hover:text-blue-600">
+              Blogs
+            </a>
+            <Link to="http://174.138.123.146:9028/register" target="_blank">
+              <button className="px-4 py-2 mt-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                Sign Up
+              </button>
+            </Link>
+          </div>
+        )}
 
-<div className="flex space-x-8 font-sans text-gray-600  dark:text-gray-100 text-base">
-                <NavLink
-                to="/business"
-                className={({ isActive }) =>
-                  `transition hover:text-blue-600 dark:text-white ${
-                    isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : 'text-gray-600 '
-                  }`
-                }
-              >
-                For Businesses
-              </NavLink>
+        {/* DESKTOP HEADER */}
+        <div className="hidden lg:flex w-full items-center justify-between">
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src="/Archinza-Logo-light.png"
+              alt="Archinza Logo Light"
+              className="h-8 w-auto dark:hidden"
+            />
+            <img
+              src="/Archinza-Logo-dark.png"
+              alt="Archinza Logo Dark"
+              className="h-8 w-auto hidden dark:block"
+            />
+          </Link>
+
+          <div className="flex space-x-8 text-base text-gray-600 dark:text-gray-100">
+            <NavLink
+              to="/business"
+              className={({ isActive }) =>
+                `hover:text-blue-600 transition ${
+                  isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : ''
+                }`
+              }
+            >
+              For Businesses
+            </NavLink>
 
             <NavLink
-                to="/personal"
-                className={({ isActive }) =>
-                  `transition hover:text-blue-600 dark:text-white ${
-                    isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : 'text-gray-600'
-                  }`
-                }
-              >
-                For Individuals
-              </NavLink>
+              to="/personal"
+              className={({ isActive }) =>
+                `hover:text-blue-600 transition ${
+                  isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : ''
+                }`
+              }
+            >
+              For Individuals
+            </NavLink>
 
-
-            
             <div className="relative group">
               <button className="flex items-center gap-1 hover:text-blue-600 transition">
                 About
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {/* Dropdown if needed */}
-              <div className="hidden absolute top-full left-0 mt-2 w-40 bg-white shadow-md rounded-md py-2 group-hover:block z-10">
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100">Team</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-100">Vision</a>
+              <div className="hidden absolute top-full left-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-md rounded-md py-2 group-hover:block z-10">
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Team</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Vision</a>
               </div>
             </div>
 
             <button className="hover:text-blue-600 transition">Blogs</button>
           </div>
 
-
- 
-
-                    
-                    
-        <div className="space-x-8 justify-center items-center">        
+          <div className="flex items-center space-x-6">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg  hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105"
+              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label="Toggle theme"
             >
               {isDark ? (
@@ -97,18 +145,20 @@ const Header: React.FC = () => {
               ) : (
                 <Moon className="w-5 h-5 text-gray-600" />
               )}
-            </button>  
-            <Link to="http://174.138.123.146:9028/login"   target="_blank" rel="noopener noreferrer" >
-              <button className="hover:text-blue-600 transition dark:text-white">Log-In</button>
+            </button>
+            <Link to="http://174.138.123.146:9028/login" target="_blank" rel="noopener noreferrer">
+              <button className="hover:text-blue-600 dark:text-white">Log-In</button>
             </Link>
-                  <Link to="http://174.138.123.146:9028/register" target="_blank" rel="noopener noreferrer">
-                    <button className="group inline-flex items-center justify-center px-6 py-3 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-105">
-                      Sign Up
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 " />
-                    </button>
-                  </Link>
-        </div> 
-
+            <Link to="http://174.138.123.146:9028/register" target="_blank" rel="noopener noreferrer">
+              <button className="group inline-flex items-center justify-center px-6 py-3 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700">
+                Sign Up
+                <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );
