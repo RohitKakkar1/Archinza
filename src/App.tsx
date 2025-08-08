@@ -11,6 +11,7 @@ import Business from './components/Business.tsx'; // New page
 import MobileHeroSection from './components/MobileHeroSection.tsx';
 
 import GetStarted from './components/GetStarted.tsx';
+import ContactUsSection from './components/contactus.tsx';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                   <WhosItFor />
                   <WebOffering />
                   <Bot />
+                  <ContactUsSection />
                   {/* <GetStarted /> */}
                 </>
               }
