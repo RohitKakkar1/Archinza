@@ -15,7 +15,7 @@ const sectionsData = [
     description:
       'Archinza Web helps businesses and individuals discover the right materials, connect with trusted vendors, and showcase their work.',
     tags: ['Design & Consult', 'Manufacture & Resell', 'Support Design'],
-    image: '/Business/Search.png',
+    video: '/Business/Search.mp4',
     buttonText: 'Get Started on Archinza Web',
   },
   {
