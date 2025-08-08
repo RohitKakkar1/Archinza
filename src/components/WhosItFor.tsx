@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const WhosItFor: React.FC = () => {
   return (
@@ -62,20 +63,25 @@ const WhosItFor: React.FC = () => {
     Explore how Archinza helps businesses get found, find inspiration.
   </p>
 
-  {/* Buttons */}
-  <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-2">
-    <Link to="http://174.138.123.146:9028/register/business/basic-details" target="_blank" rel="noopener noreferrer">
-      <button className="group inline-flex items-center justify-center px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-105">
-        Get Started as a Business
-        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-      </button>
-    </Link>
-    <button className="group inline-flex items-center justify-center w-fit px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full">
-      Know More
-      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-    </button>
-  </div>
-</div>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-2">
+          <Link to="http://174.138.123.146:9028/register/business/basic-details" target="_blank" rel="noopener noreferrer">
+            <button className="group inline-flex items-center justify-center px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-105">
+              Get Started as a Business
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+          </Link>
+          <NavLink
+                    to="/business"
+                  className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
+                  >
+                <button className="group inline-flex items-center justify-center w-fit px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full">
+                  Know More
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </button>
+          </NavLink>
+        </div>
+      </div>
 
           </div>
 
@@ -127,11 +133,15 @@ const WhosItFor: React.FC = () => {
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                       </button>
                   </Link>
-                
+                <NavLink
+              to="/personal"
+className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
+            >
                 <button className="group inline-flex items-center justify-center w-fit px-4 py-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full">
                     Know More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
+                </NavLink>
               </div>
             </div>
           </div>
