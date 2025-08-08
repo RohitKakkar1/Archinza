@@ -9,7 +9,7 @@ import Benefits from "./business/benefits";
 
 const Business = () => {
   return (
-  <section className="flex-1  px-4 ">
+<section className="flex-1 px-4 pt-20 md:pt-0">
     
     <Bus_Offering />
     <NetworkSection />
