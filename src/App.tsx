@@ -12,12 +12,15 @@ import MobileHeroSection from './components/MobileHeroSection.tsx';
 
 import GetStarted from './components/GetStarted.tsx';
 import ContactUsSection from './components/contactus.tsx';
+import ScrollToTop from './components/scrollTop.tsx';
 
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
+                <ScrollToTop /> {/* ⬅ added here */}
+
         <div className="min-h-screen bg-white dark:bg-gray-900 duration-300">
           <Header />
           <Routes>
