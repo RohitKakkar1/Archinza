@@ -6,6 +6,7 @@ import Features from "./business/features";
 import WhoIsItFor from "./business/WhoIsItFor";
 import Benefits from "./business/benefits";
  import NetworkSection from "./business/Network";
+import FoundingUserCard from "./foundingUserCard";
 
 const Business = () => {
   return (

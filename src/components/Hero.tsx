@@ -150,7 +150,7 @@ const HeroSection: React.FC = () => {
               at every step of your Design & Build journey.
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-l text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Discovery made easy using Archinza’s intelligent AI solutions.
           </p>
         </div>

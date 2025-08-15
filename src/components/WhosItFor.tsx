@@ -10,11 +10,10 @@ const WhosItFor: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl font-sans sm:text-4xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">
-            Who's it for
+            Who is it for
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Archinza helps businesses connect, design professionals grow, and everyday 
-            users discover what they need — quickly, and intelligently.
+          <p className="text-lg sm:text-xl font-sans  text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+           Archinza helps businesses, professionals, and individuals showcase, discover and connect with relevant people, products, and services from design to development.
           </p>
         </div>
 
@@ -52,15 +51,20 @@ const WhosItFor: React.FC = () => {
       Design & Consult
     </span>
     <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Support Design
+      Build or Install
     </span>
     <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Manufacture & Resell
+      Sell products or Materials
+    </span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+      Manufacture & Distribute
+    </span><span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+      Support Design
     </span>
   </div>
 
   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-    Explore how Archinza helps businesses get found, find inspiration.
+    Showcase offerings, reach  professionals, and grow visibility.
   </p>
 
         {/* Buttons */}
@@ -111,6 +115,9 @@ const WhosItFor: React.FC = () => {
                           {/* Tags */}
             <div className="flex flex-row flex-wrap gap-2">
               <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                Business/ Firm Owner
+              </span>
+              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
                 Working Professional
               </span>
               <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
@@ -119,10 +126,14 @@ const WhosItFor: React.FC = () => {
               <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
                 Home-owner
               </span>
+              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                Artist / Freelancer
+              </span>
+              
             </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                Explore how Archinza helps businesses get found, find inspiration.
+                Discover the right people, products, and design ideas.
               </p>
               
               {/* Buttons */}

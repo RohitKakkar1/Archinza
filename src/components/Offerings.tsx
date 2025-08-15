@@ -7,11 +7,11 @@ const WebOffering: React.FC = () => {
       <div className="max-w-7xl   mx-auto">
     {/* Header */}
         <div className="text-center mb-6 lg:mb-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+          <h2 className="text-3xl font-sans sm:text-4xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">
             Our Offerings
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Search, discover, and reach—smarter. <br /> Archinza helps you find people, explore materials, products, and services, and get instant answers through a simple web and WhatsApp-first experience.
+            Archinza is your shortcut to design discovery. <br /><b>Search</b>, <b>Discover</b>, <b>Reach</b>, and <b>Ask</b> design questions through a Web and WhatsApp-first experience.
           </p>
         </div>
         
@@ -34,12 +34,12 @@ const WebOffering: React.FC = () => {
             </div>
           {/* Content Section */}
           <div className="space-y-6 lg:space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
+            <h1 className="text-3xl font-sans sm:text-4xl lg:text-3xl font-medium text-gray-900 dark:text-white leading-tight">
               Archinza AI Web
             </h1>
             
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-              Archinza Web helps businessness and individuals discover the right materials, connect with trusted vendors, and showcase their work-- all through an AI Powered experience that simplifies decisions and saves times.
+              Archinza Web lets businesses showcase or recommend their work, while helping individuals search and discover products, materials, and industry professionals, all through an <b>AI-powered platform</b>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

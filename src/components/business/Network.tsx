@@ -40,7 +40,7 @@ const NetworkSection = () => {
               {/* Header */}
               <div className="space-y-6">
                 <p className="text-sm font-sans  font-semibold tracking-[0.2em] text-gray-400 uppercase">
-                  Archinza Network
+                  Archinza Community
                 </p>
                 
                 <h1 className="text-2xl font-sans lg:text-3xl xl:text-4xl font-bold leading-tight">
@@ -57,7 +57,7 @@ const NetworkSection = () => {
               <div className="grid grid-cols-2 gap-8 lg:gap-12 pt-8">
                 <div className="space-y-2">
                   <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
-                    600<span className="text-blue-400">+</span>
+                    300<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
                     Design & Build Businesses
@@ -66,7 +66,7 @@ const NetworkSection = () => {
                 
                 <div className="space-y-2">
                   <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
-                    160<span className="text-blue-400">+</span>
+                    100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
                      Brands & Manufactureres
@@ -75,7 +75,7 @@ const NetworkSection = () => {
                 
                 <div className="space-y-2">
                   <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
-                    100<span className="text-blue-400">+</span>
+                    600<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
                     Sellers & Distributers
@@ -84,7 +84,7 @@ const NetworkSection = () => {
                 
                 <div className="space-y-2">
                   <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
-                    700<span className="text-blue-400">+</span>
+                    100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
                     Design Support Services

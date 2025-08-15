@@ -12,7 +12,11 @@ import MobileHeroSection from './components/MobileHeroSection.tsx';
 
 import GetStarted from './components/GetStarted.tsx';
 import ContactUsSection from './components/contactus.tsx';
+import FoundingUserCard from './components/foundingUserCard.tsx';
 import ScrollToTop from './components/scrollTop.tsx';
+import FAQ from './components/FAQ.tsx';
+import Footer from './components/Footer.tsx';
+import ShareSection from './components/ShareSection.tsx';
 
 
 function App() {
@@ -43,7 +47,18 @@ function App() {
                   <WhosItFor />
                   <WebOffering />
                   <Bot />
-                  <ContactUsSection />
+                        <FAQ />
+
+                        <section id="Found"><FoundingUserCard /></section>
+
+                        <ShareSection />
+
+                  <hr className="border-t border-gray-300" />
+
+
+                                              
+                                              <Footer />
+
                   {/* <GetStarted /> */}
                 </>
               }
