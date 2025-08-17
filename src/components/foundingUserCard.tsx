@@ -32,13 +32,7 @@ const FoundingUserCard = () => {
         </div>
 
         {/* Desktop image */}
-        <div className="hidden lg:block flex-shrink-0">
-          <img 
-            src={illustration} 
-            alt="Illustration" 
-            className="w-64"
-          />
-        </div>
+        
       </div>
     </section>
   );

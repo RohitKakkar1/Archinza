@@ -27,13 +27,7 @@ const sectionsData = [
     video: '/Business/Scraper_Illustration.mp4',
     buttonText: 'Explore',
   },
-  {
-    id: 4,
-    heading: 'Feature 4 Title',
-    description: 'Some description for feature 4.',
-    image: '/Business/AIBusinessBot.png',
-    buttonText: 'Explore',
-  },
+
 ];
 
 const Features: React.FC = () => {

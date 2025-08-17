@@ -81,64 +81,92 @@ const FeaturesUser: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-8">
-      {/* Title */}
 
-      {/* Container with light background */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 min-h-[500px]">
-        {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-black rounded-full p-1 flex space-x-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-white text-black shadow-lg'
-                    : 'text-white hover:text-gray-300'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+  {/* Desktop Section */}
+  <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 min-h-[500px] hidden lg:block">
+    {/* Tab Navigation */}
+    <div className="flex justify-center mb-12">
+      <div className="bg-black rounded-full p-1 flex space-x-1">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
+              activeTab === tab.id
+                ? 'bg-white text-black shadow-lg'
+                : 'text-white hover:text-gray-300'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {/* Content Area */}
+    <div className="flex items-start justify-between">
+      {/* Left Content */}
+      <div className="flex-1 max-w-md">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          {currentContent.heading}
+        </h2>
+        <div className="space-y-4">
+          {currentContent.items.map((item, index) => (
+            <p key={index} className="text-gray-700 leading-relaxed">
+              {item}
+            </p>
+          ))}
         </div>
+      </div>
 
-        {/* Content Area */}
-        <div className="flex items-start justify-between">
-          {/* Left Content */}
-          <div className="flex-1 max-w-md">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {currentContent.heading}
-            </h2>
-            <div className="space-y-4">
-              {currentContent.items.map((item, index) => (
-                <p key={index} className="text-gray-700 leading-relaxed">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-
-        {/* Right Mockup */}
-          <div className="flex-1 max-w-md ml-8">
-            <div className="bg-white rounded-2xl shadow-xl  hover:rotate-0 transition-transform duration-300">
-              {/* Mock interface */}
-              <div>
-                    {currentContent.image && (
-                        <img
-                          src={currentContent.image}
-                          alt={currentContent.heading}
-                          className="w-full max-w-md rounded-lg border-none "
-                        />
-                      )}
-              </div>
-            </div>
-          </div>
-
+      {/* Right Mockup */}
+      <div className="flex-1 max-w-md ml-8">
+        <div className="bg-white rounded-2xl shadow-xl hover:rotate-0 transition-transform duration-300">
+          {currentContent.image && (
+            <img
+              src={currentContent.image}
+              alt={currentContent.heading}
+              className="w-full max-w-md rounded-lg border-none"
+            />
+          )}
         </div>
       </div>
     </div>
+  </div>
+
+  {/* Mobile Section (cards) */}
+  <div className="lg:hidden flex flex-col space-y-8">
+    {tabs.map((tab) => {
+      const content = tabContent[tab.id];
+      return (
+        <div
+          key={tab.id}
+          className="bg-white rounded-2xl shadow-md p-6"
+        >
+           {content.image && (
+            <img
+              src={content.image}
+              alt={content.heading}
+              className="w-full rounded-lg object-contain"
+            />
+          )}
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            {content.heading}
+          </h2>
+          <div className="space-y-2 mb-4">
+            {content.items.map((item, i) => (
+              <p key={i} className="text-gray-700 text-sm leading-relaxed">
+                {item}
+              </p>
+            ))}
+          </div>
+         
+        </div>
+      );
+    })}
+  </div>
+</div>
+
   );
 };
 

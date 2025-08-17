@@ -23,7 +23,7 @@ const Business = () => {
 
           <section id="benefits"><Benefits /></section>
 
-          {/* <FeaturesBus /> */}
+          <FeaturesBus />
                                                         <Footer />
 
 
