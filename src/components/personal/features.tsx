@@ -4,35 +4,35 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const sectionsData = [
     {
     id: 1,
-    heading: 'Create your Archinza Business Page',
+    heading: 'AI Powered Personal Assisstant',
     description: 'Archinza helps you create your AI powered Archinza Page. Just provide us your Instagram, Website Link and Profile PDFs',
-    video: '/Business/Scraper_Illustration.mp4',
+    image: '/Personal/Personal_Assisstant.png',
     buttonText: 'Explore',
   },
   {
     id: 2,
-    heading: 'Get found by people searching for services like yours',
+    heading: 'Ask anything from design to technical',
     description:
-      'Archinza Web helps businesses and individuals discover the right materials, connect with trusted vendors, and showcase their work.',
+      '“How do I style a small room?” “What’s the ideal lighting for a workspace?” Get instant answers in one chat.',
     tags: ['Design & Consult', 'Manufacture & Resell', 'Support Design'],
-    video: '/Business/Search.mp4',
+    image: '/Personal/Design_Idea.png',
     buttonText: 'Get Started on Archinza Web',
   },
   {
     id: 3,
-    heading: 'AI that answers for your Business, to anyone, anytime',
+    heading: 'Save it for later',
     description:
-      'Connect with verified vendors, browse materials with transparency, and save time on procurement.',
+      'Bookmark products, businesses and ideas so they’re ready when you are.',
     tags: ['Verified Vendors', 'Transparent Pricing', 'Quick Connect'],
-    image: '/Business/AIBusinessBot.png',
+    image: '/Personal/Material_Selection.png',
     buttonText: 'Explore Vendors',
   },
 
   {
     id: 4,
-    heading: 'Feature 4 Title',
+    heading: 'Search made simple',
     description: 'Some description for feature 4.',
-    image: '/Business/AIBusinessBot.png',
+    image: '/Personal/Visual_Discovery.png',
     buttonText: 'Explore',
   },
 ];
@@ -74,28 +74,33 @@ const Features: React.FC = () => {
   }, []);
 
   return (
-    <section className=" lg:px-8 py-12">
-      <div className="text-center bg-blue-100 mb-6 py-16 dark:bg-gray-800">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600  dark:text-blue-400">
-          What all we offer
-        </h2>
-      </div>
+    <section className="flex-1 ">
+            {/* Header */}
+        <div className="text-center bg-blue-100 mb-6 py-16 lg:mb-6 dark:bg-gray-800">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+            How we help you
+          </h2>
+        </div>
+      <div className="max-w-7xl mx-auto ">
+        {sectionsData.map((section, index) => (
+          <div
+            key={section.id}
+            className={`flex flex-col-reverse lg:flex-row ${
+              index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+            } items-center justify-center gap-8 lg:gap-12 h-auto lg:h-[70vh]   mb-16 lg:mb-0`}
+          >
+            {/* Text Section */}
+            <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
+                {section.heading}
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                {section.description}
+              </p>
+              
+            </div>
 
-      <div
-  ref={scrollRef}
-  className="flex gap-4 sm:gap-6 overflow-x-auto overflow-y-visible no-scrollbar scroll-smooth px-4 sm:px-4 pb-8 sm:pb-12"
-  style={{
-    scrollSnapType: 'x mandatory',
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-  }}
->
-  {sectionsData.map((section) => (
-    <div
-      key={section.id}
-      className="min-w-[85%] max-w-[85%] sm:min-w-[85%] sm:max-w-[85%] lg:min-w-[45%] lg:max-w-[45%] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 sm:p-4 scroll-snap-align-start"
-    >
-      <div className="mb-4">
+            {/* Image Section */}
 {section.video ? (
   <video
     src={section.video}
@@ -103,30 +108,24 @@ const Features: React.FC = () => {
     loop
     muted
     playsInline
-    className="w-full rounded-xl mb-4 
+    className="w-full max-w-3xl mx-auto rounded-xl mb-4 
                h-[280px] sm:h-[400px] lg:h-[60vh] 
-               object-cover"
+               object-contain bg-transparent"
   />
 ) : (
   <img
     src={section.image}
     alt={section.heading}
-    className="w-full rounded-xl mb-4 
+    className="w-full max-w-3xl mx-auto rounded-xl mb-4 
                h-[280px] sm:h-[320px] lg:h-[60vh] 
-               object-cover"
+               object-contain bg-transparent"
   />
 )}
-        <h3 className="text-lg sm:text-2xl font-semibold text-gray-800 dark:text-white mt-3">
-          {section.heading}
-        </h3>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mt-2">
-          {section.description}
-        </p>
-      </div>
-    </div>
-  ))}
-</div>
 
+
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

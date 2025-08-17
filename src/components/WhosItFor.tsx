@@ -13,7 +13,7 @@ const WhosItFor: React.FC = () => {
             Who is it for
           </h2>
           <p className="text-lg sm:text-xl font-sans  text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-           Archinza helps businesses, professionals, and individuals showcase, discover and connect with relevant people, products, and services from design to development.
+           Archinza is a discovery platform where professionals, businesses, students, and clients explore services, discover products, and get inspired within a industry-focused ecosystem.
           </p>
         </div>
 

@@ -11,8 +11,8 @@ const WebOffering: React.FC = () => {
             Our Offerings
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Archinza is your shortcut to design discovery. <br /><b>Search</b>, <b>Discover</b>, <b>Reach</b>, and <b>Ask</b> design questions through a Web and WhatsApp-first experience.
-          </p>
+              <b>Search, Reach, Ask, Connect</b><br />
+              On the web or through our WhatsApp bot, Archinza delivers relevant services, products, people, and answers instantly on demand.          </p>
         </div>
         
         <div className="grid items-center h-[70vh] flex flex-col-reverse lg:flex-row justify-center lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -39,8 +39,7 @@ const WebOffering: React.FC = () => {
             </h1>
             
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-              Archinza Web lets businesses showcase or recommend their work, while helping individuals search and discover products, materials, and industry professionals, all through an <b>AI-powered platform</b>.
-            </p>
+Browse curated businesses, explore products, materials, expertise, save inspirations, all through an AI-powered platform.            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               

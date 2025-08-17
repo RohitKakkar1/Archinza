@@ -47,9 +47,12 @@ function App() {
                   <WhosItFor />
                   <WebOffering />
                   <Bot />
+                  <GetStarted /> 
                         <FAQ />
+                        
 
                         <section id="Found"><FoundingUserCard /></section>
+                         
 
                         <ShareSection />
 
@@ -59,7 +62,7 @@ function App() {
                                               
                                               <Footer />
 
-                  {/* <GetStarted /> */}
+                 
                 </>
               }
             />

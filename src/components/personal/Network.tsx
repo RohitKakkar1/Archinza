@@ -60,7 +60,7 @@ const NetworkSection = () => {
                     300<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
-                    Design & Build Businesses
+                    Business/ Firm Owners
                   </p>
                 </div>
                 
@@ -69,7 +69,7 @@ const NetworkSection = () => {
                     100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
-                     Brands & Manufactureres
+                     Working Professionals
                   </p>
                 </div>
                 
@@ -78,7 +78,7 @@ const NetworkSection = () => {
                     600<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
-                    Sellers & Distributers
+                    Students
                   </p>
                 </div>
                 
@@ -87,9 +87,10 @@ const NetworkSection = () => {
                     100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
-                    Design Support Services
+                    Freelancers/ Artists
                   </p>
                 </div>
+
               </div>
             </div>
           </div>

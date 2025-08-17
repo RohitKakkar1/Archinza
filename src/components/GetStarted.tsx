@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useState } from "react";
-import Features from './features';
+import FeaturesBus from './features';
 import FeaturesUser from './FeaturesUser.tsx';
 
 const GetStarted: React.FC = () => {
@@ -9,11 +9,11 @@ const GetStarted: React.FC = () => {
     const [userType, setUserType] = useState("business");
 
   return (
-    <section className="flex-1  px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
-              <div className="h-[100vh] bg-white py-8">
+    <section className="flex-1 h-fit  px-4 sm:px-6 lg:px-8 py-8 lg:py-16 dark:bg-black">
+              <div className="h-fit bg-white py-8 dark:bg-black">
       {/* Heading + Dropdown */}
       <div className="text-center ">
-              <div className="inline-flex items-center justify-center text-4xl font-bold text-gray-900 gap-2">
+              <div className="inline-flex items-center font-sans justify-center text-4xl font-medium text-gray-900 gap-2">
                 <span>Get started as a</span>
                <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full p-1">
                       <button
@@ -43,7 +43,7 @@ const GetStarted: React.FC = () => {
             </div>
 
       {/* Conditional Component */}
-      {userType === "business" ? <Features /> : <FeaturesUser />}
+      {userType === "business" ? <FeaturesBus /> : <FeaturesUser />}
     </div>
     </section>
   );

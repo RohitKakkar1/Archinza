@@ -80,60 +80,7 @@ const Benefits: React.FC = () => {
         </h2>
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
-        {/* Left Arrow */}
-        {canScrollLeft && (
-          <button
-            onClick={() => handleScroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full"
-          >
-            <ChevronLeft size={24} />
-          </button>
-        )}
 
-        {/* Scrollable Container */}
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto overflow-y-visible no-scrollbar scroll-smooth px-8 pb-12"
-          style={{
-            scrollSnapType: 'x mandatory',
-            paddingBottom: '24px',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          }}
-        >
-          {sectionsData.map((section) => (
-            <div
-              key={section.id}
-              className="min-w-[80%] max-w-[80%] lg:min-w-[45%] lg:max-w-[45%] flex-shrink-0 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 scroll-snap-align-start"
-            >
-              <div className="mb-4">
-                <img
-                  src={section.image}
-                  alt={section.heading}
-                  className="w-full h-[320px] object-contain rounded-xl mb-4"
-                />
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
-                  {section.heading}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">
-                  {section.description}
-                </p>
-              </div> 
-            </div>
-          ))}
-        </div>
-
-        {/* Right Arrow */}
-        {canScrollRight && (
-          <button
-            onClick={() => handleScroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md p-2 rounded-full"
-          >
-            <ChevronRight size={24} />
-          </button>
-        )}
-      </div>
     </section>
   );
 };

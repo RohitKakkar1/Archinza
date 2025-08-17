@@ -26,8 +26,8 @@ const Bus_Offering: React.FC = () => {
             </h2>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-medium	 text-gray-900 dark:text-white leading-tight">
-            It all starts with a 
-            <span className="text-blue-600 dark:text-blue-400">Business Account</span>
+            It all starts with a <br />
+            <span className="text-blue-600 dark:text-blue-400"> Business Account</span>
           </h2>
 
 

@@ -6,6 +6,8 @@ import Features from "./personal/features";
 import WhoIsItFor from "./personal/WhoIsItFor";
 import Benefits from "./personal/benefits";
  import NetworkSection from "./personal/Network";
+ import Footer from "./Footer";
+import FeaturesUser from "./FeaturesUser";
 
 const Personal = () => {
   return (
@@ -19,6 +21,10 @@ const Personal = () => {
                     
 
           <section id="benefits"><Benefits /></section>
+
+          {/* <FeaturesUser /> */}
+                                                        <Footer />
+
 
     </section>
   );

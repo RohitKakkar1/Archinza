@@ -8,7 +8,7 @@ interface TabContent {
     image: string; // URL or local image path
 }
 
-const Features: React.FC = () => {
+const FeaturesBus: React.FC = () => {
   const [activeTab, setActiveTab] = useState('ask');
 
   const tabs = [
@@ -44,7 +44,7 @@ const Features: React.FC = () => {
         '• Be available 24/7 — even when you’re not',
          '• Product Vendors',
       ],
-            image:'Amazon_rufus.png'
+            image:'Business_Bot.png'
     },
     reach: {
       id: 'reach',
@@ -62,7 +62,7 @@ const Features: React.FC = () => {
       items: [
         'Get real-time insights on reach, discovery, and interest. See what’s drawing attention, where you’re being viewed, and how people are finding you so you can stay one step ahead.'
       ],
-            image:'BusinessDBIn.png'
+            image:'Business_INsights.png'
     },
     recommend:{
       id: 'connect',
@@ -139,4 +139,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features;
+export default FeaturesBus;

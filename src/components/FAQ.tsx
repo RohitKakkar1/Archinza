@@ -41,7 +41,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="h-fit py-36 px-4 sm:px-6 lg:px-8 bg-gray-50 text-gray-900 dark:bg-black dark:text-white">
+    <div className="h-fit py-36 px-4 sm:px-6 lg:px-8 bg-white text-gray-900 dark:bg-black dark:text-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column */}

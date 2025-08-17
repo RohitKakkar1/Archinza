@@ -4,37 +4,46 @@ import { ArrowRight } from 'lucide-react';
 const sectionsData = [
   {
     id: 1,
-    heading: 'Businesses that Design & Build',
+    heading: 'Businesses that Design & Consult',
     description:
-      'Archinza Web helps businesses and individuals discover the right materials, connect with trusted vendors, and showcase their work.',
-    tags: ['Design & Consult', 'Manufacture & Resell', 'Support Design'],
+      'Archinza helps Designers and Consultants exhibit their unique services, get discovered by clients, generate qualified leads, gain insights and easily find relevant people & products.',
+    tags: ['Architecture Firms', 'Interior Design Firms', 'HVAC Consultants', 'Vastu Consultants', 'Structural Consultants'],
     image: '/Business/Architects.png',
     buttonText: 'Get Started on Archinza Web',
   },
   {
     id: 2,
-    heading: 'Businesses that Manufacture & Resell',
+    heading: 'Businesses that  Build or Install',
     description:
-      'Connect with verified vendors, browse materials with transparency, and save time on procurement.',
-    tags: ['Verified Vendors', 'Transparent Pricing', 'Quick Connect'],
+      'Archinza helps execution-focused businesses present their work to a targeted industry audience, get discovered by clients and professionals, generate qualified leads and gain insights.',
+    tags: ['Turnkey Contracting', 'Furniture Manufacturing', 'On-site Fabrication', 'Execution', 'Installation'],
     image: '/Business/Manufactureres.png',
     buttonText: 'Explore Vendors',
   },
   {
     id: 3,
-    heading: 'On-Site Professionals',
+    heading: 'Businesses that Sell Products or Materials',
     description:
-      'Build and manage your online portfolio directly on Archinza and attract new clients.',
-    tags: ['Beautiful Profiles', 'Easy Updates', 'SEO Ready'],
+      'Archinza helps vendors increase product visibility among buyers, attract professional interest, generate qualified leads, and gain insights.',
+    tags: ['Showrooms', 'Distributors', 'Importers', 'Vendors'],
     image: '/Business/Onsiteprofessionals.png',
     buttonText: 'Showcase Now',
   },
   {
-    id: 3,
+    id: 4,
+    heading: 'Manufacture & Distribute Products',
+    description:
+      'Archinza links national and international brands to the design and construction ecosystem, expanding reach, attracting the right buyers and industry professionals, and providing insights.',
+    tags: ['Furniture Manufacturer', 'Lighting Fixtures', 'Flooring Solutions'],
+    image: '/Business/SupportDesigns.png',
+    buttonText: 'Showcase Now',
+  },
+    {
+    id: 5,
     heading: 'Businesses that Support Design',
     description:
-      'Build and manage your online portfolio directly on Archinza and attract new clients.',
-    tags: ['Beautiful Profiles', 'Easy Updates', 'SEO Ready'],
+      'Archinza helps Design Support providers get noticed by industry professionals, showcase their expertise, generate leads, and gain insights.',
+    tags: ['Events Organizer', 'PR Agency', 'Photographers', '3D Visualizer', 'Marketing Agency'],
     image: '/Business/SupportDesigns.png',
     buttonText: 'Showcase Now',
   },
@@ -55,7 +64,7 @@ const WhoIsItFor: React.FC = () => {
             key={section.id}
             className={`flex flex-col-reverse lg:flex-row ${
               index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-            } items-center justify-center gap-8 lg:gap-12 h-auto lg:h-[70vh]`}
+            } items-center justify-center gap-8 lg:gap-12 h-auto lg:h-[70vh]  mb-16 lg:mb-0`}
           >
             {/* Text Section */}
             <div className="w-full lg:w-1/2 space-y-6 lg:space-y-4 text-center lg:text-left">
