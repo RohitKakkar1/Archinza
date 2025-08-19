@@ -31,7 +31,7 @@ const sectionsData = [
   },
   {
     id: 4,
-    heading: 'Manufacture & Distribute Products',
+    heading: 'Manufacturers/ Brands that sell via distributors',
     description:
       'Archinza links national and international brands to the design and construction ecosystem, expanding reach, attracting the right buyers and industry professionals, and providing insights.',
     tags: ['Furniture Manufacturer', 'Lighting Fixtures', 'Flooring Solutions'],
@@ -54,9 +54,10 @@ const WhoIsItFor: React.FC = () => {
     <section className="flex-1 ">
             {/* Header */}
         <div className="text-center bg-blue-100 mb-6 py-16 lg:mb-6 dark:bg-gray-800">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+          <h2 className="text-3xl font-sans sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
             Archinza for different businesses
           </h2>
+          <p className='font-sans text-gray-700 dark:text-gray-200'>Archinza works for all kinds of businesses, from small firms to global brands. Onboarding is free and showcasing offerings is easy.</p>
         </div>
       <div className="max-w-7xl mx-auto ">
         {sectionsData.map((section, index) => (

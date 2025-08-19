@@ -47,16 +47,16 @@ const NetworkSection = () => {
                     Meet the platform that powers the built environment.
                 </h1>
                 
-                <p className="text-lg font-sans  lg:text-l text-gray-700 leading-relaxed max-w-2xl">
+                <p className="text-lg font-sans  lg:text-l text-gray-700 leading-relaxed max-w-2xl dark:text-gray-200">
                   Discover projects, people, and possibilities—all in one place. Archinza connects architects, material experts, and design professionals through one intelligent ecosystem.
 
                 </p>
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-8 lg:gap-12 pt-8">
+              <div className="grid grid-cols-2 gap-8 lg:gap-12 pt-8  ">
                 <div className="space-y-2">
-                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
+                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700 dark:text-gray-200">
                     300<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
@@ -65,7 +65,7 @@ const NetworkSection = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
+                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700 dark:text-gray-200">
                     100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
@@ -74,7 +74,7 @@ const NetworkSection = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
+                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700 dark:text-gray-200">
                     600<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">
@@ -83,7 +83,7 @@ const NetworkSection = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
+                  <div className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700 dark:text-gray-200">
                     100<span className="text-blue-400">+</span>
                   </div>
                   <p className="text-sm lg:text-base text-gray-400">

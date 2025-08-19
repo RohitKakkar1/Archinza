@@ -71,7 +71,7 @@ const Features: React.FC = () => {
             {/* Header */}
         <div className="text-center bg-blue-100 mb-6 py-16 lg:mb-6 dark:bg-gray-800">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
-            Archinza for different businesses
+            How we help you
           </h2>
         </div>
       <div className="max-w-7xl mx-auto ">

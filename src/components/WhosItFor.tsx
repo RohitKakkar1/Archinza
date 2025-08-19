@@ -13,7 +13,7 @@ const WhosItFor: React.FC = () => {
             Who is it for
           </h2>
           <p className="text-lg sm:text-xl font-sans  text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-           Archinza is a discovery platform where professionals, businesses, students, and clients explore services, discover products, and get inspired within a industry-focused ecosystem.
+           Archinza is a discovery platform in the AECD space where professionals, businesses, students, and clients explore services, discover products, and get inspired within a industry-focused ecosystem.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const WhosItFor: React.FC = () => {
             {/* Content */}
 <div className="space-y-4 text-center sm:text-left">
   <h3 className="text-2xl sm:text-3xl font-sans font-bold text-blue-600 dark:text-blue-400">
-    Archinza for Businesses
+    Archinza for Businesses / Firms
   </h3>
 
   {/* Tags */}
@@ -64,14 +64,14 @@ const WhosItFor: React.FC = () => {
   </div>
 
   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-    Showcase offerings, reach  professionals, and grow visibility.
+    Showcase offerings, reach clients, professionals, and grow visibility.
   </p>
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-2">
           <Link to="http://174.138.123.146:9028/register/business/basic-details" target="_blank" rel="noopener noreferrer">
             <button className="group inline-flex items-center justify-center px-4 py-2 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-105">
-              Get Started as a Business
+              Get Started as a Business/ Firm
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
           </Link>
@@ -133,7 +133,7 @@ const WhosItFor: React.FC = () => {
             </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                Discover the right people, products, and design ideas.
+                Discover the right people, products, and materials.
               </p>
               
               {/* Buttons */}

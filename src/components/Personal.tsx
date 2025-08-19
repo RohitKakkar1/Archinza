@@ -14,7 +14,6 @@ const Personal = () => {
 <section className="flex-1 px-4 pt-20 md:pt-0">
     
     <Bus_Offering />
-    <NetworkSection />
     <SectionToggle />
     <section id="who-is-it-for"><WhoIsItFor /></section>
           <section id="features"><Features /></section>

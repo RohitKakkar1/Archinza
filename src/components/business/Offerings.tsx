@@ -10,8 +10,8 @@ const Bus_Offering: React.FC = () => {
         
         {/* Text Content - 40% */}
         <div className="w-full space-y-6">
-                     <div className="w-full bg-white text-black dark:text-white dark:bg-gray-800">
-            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-medium	 text-gray-900 dark:text-white leading-tight ">
+          <div className="w-full text-black dark:text-white ">
+            <h2 className="text-xl sm:text-4xl lg:text-4xl font-sans font-medium	 text-gray-900 dark:text-white leading-tight ">
               Get found by {' '}
               
               <span className="text-orange-500">
@@ -25,8 +25,8 @@ const Bus_Offering: React.FC = () => {
               </span>{' '}
             </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-medium	 text-gray-900 dark:text-white leading-tight">
-            It all starts with a <br />
+          <h2 className="text-3xl sm:text-4xl lg:text-2xl font-sans font-medium	 text-gray-900 dark:text-white leading-tight">
+            It all starts with a 
             <span className="text-blue-600 dark:text-blue-400"> Business Account</span>
           </h2>
 

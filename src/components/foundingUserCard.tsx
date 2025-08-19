@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import illustration from "/images/Founding_User.png"; // replace with your mobile image path
@@ -39,3 +40,5 @@ const FoundingUserCard = () => {
 };
 
 export default FoundingUserCard;
+
+

@@ -61,7 +61,7 @@ const FeaturesBus: React.FC = () => {
       items: [
         "Get real-time insights on reach, discovery, and interest. See what’s drawing attention, where you’re being viewed, and how people are finding you so you can stay one step ahead.",
       ],
-      image: "Business_Insights.png",
+      image: "Business_INsights.png",
     },
     recommend: {
       id: "recommend",

@@ -6,9 +6,9 @@ import Features from "./business/features";
 import WhoIsItFor from "./business/WhoIsItFor";
 import Benefits from "./business/benefits";
  import NetworkSection from "./business/Network";
-import FoundingUserCard from "./foundingUserCard";
 import Footer from "./Footer";
 import FeaturesBus from "./features";
+import BusinessPricing from "./business/businessPricing";
 
 const Business = () => {
   return (
@@ -24,7 +24,10 @@ const Business = () => {
           <section id="benefits"><Benefits /></section>
 
           <FeaturesBus />
-                                                        <Footer />
+          <br /><br />
+                                  <section> <BusinessPricing /> </section>
+
+          <Footer />
 
 
           
