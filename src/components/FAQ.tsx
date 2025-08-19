@@ -16,15 +16,15 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Who is Archinza for?",
-      answer: "Archinza is designed for professionals in the Design & Build industry, including architects, interior designers, contractors, engineers, and anyone involved in construction and design projects. It's also valuable for homeowners, students, and businesses looking for design and construction guidance."
+      answer: " Archinza is designed for anyone seeking information or connections in the Design & Build industry. Whether you're a creative professional (designer, architect, content creator), a service provider (business owner, contractor, vendor, PR or marketing professional), a material or product seller/distributor, or simply someone passionate about the industry, Archinza is here to empower your journey at every stage."
     },
     {
       question: "What is the \"Ask\" feature in Archinza?",
-      answer: "The 'Ask' feature is our AI-powered query system that allows you to get instant, relevant answers to your design and construction questions. Simply type your question, and our AI assistant will provide detailed, professional guidance tailored to your specific needs."
+      answer: " The Ask feature (available on Whatsapp) is powered by AI and provides instant, relevant answers to your queries about design, construction, and professional guidance. In the currently available Beta version of Archinza, you can ask about technical details, materials suggestions, methods, project tips, or even mentorship. After the full product you will be able to matchmade recommendations for vendors / consultants / designers or execution teams. Please note: Archinza AI™ is a model in development, doing its best to provide helpful responses in real time and continuously learning to improve."
     },
     {
       question: "How will Archinza benefit me?",
-      answer: "Archinza offers multiple benefits including instant access to professional design guidance, connections with industry experts, curated resources and materials, career opportunities, upskilling courses, and a platform to showcase your work. It streamlines your workflow and helps you make informed decisions faster."
+      answer: " Archinza provides an AI-based matchmaking for products and services, business and sourcing, and opportunities for jobs. With easy WhatsApp adoption, Archinza is quick, easy, hyperlocal and gives equal access to all. It also helps achieve targeted reach for all professionals and businesses in the Design & Build industry at a very low cost.In addition to intelligent search and targeted visibility, Archinza offers personal users with curated design and business resources, updates on industry events, the ability to review businesses and firms and access to personalised upskilling recommendations bringing meaningful value without high marketing or outreach costs."
     },
     {
       question: "Where do I sign up?",
@@ -32,7 +32,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Is Archinza free?",
-      answer: "Archinza offers both free and premium features. Basic access to our AI assistant and some resources are available for free. Premium features, including advanced AI capabilities, exclusive content, and enhanced networking tools, are available through our subscription plans."
+      answer: "  Archinza is currently free for personal accounts during our limited early access phase available only until the full product launch. After that, subscription plans will range between ₹999 and ₹2999, depending on your account type and selected features. For Businesses We're also offering exclusive free access to our first 1000 business users for the SILVER Plan features —no charges, no catches. Post that, business accounts will be available at ₹ 800- ₹2,500 per month until the full product rollout. Click here to get free access to the Archinza Network "
     }
   ];
 
