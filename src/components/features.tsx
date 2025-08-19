@@ -78,21 +78,21 @@ const FeaturesBus: React.FC = () => {
 
   return (
 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-6 sm:p-8 min-h-[500px]">
+  <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 rounded-3xl p-6 sm:p-8 min-h-[500px]">
 
     {/* Desktop Tabs */}
     <div className="hidden lg:block">
       {/* Tab Navigation */}
       <div className="flex justify-center mb-12">
-        <div className="bg-black rounded-full p-1 flex space-x-1">
+        <div className="bg-black dark:bg-gray-200 rounded-full p-1 flex space-x-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-white text-black shadow-lg"
-                  : "text-white hover:text-gray-300"
+                  ? "bg-white text-black shadow-lg dark:bg-gray-900 dark:text-white"
+                  : "text-white hover:text-gray-300 dark:text-black dark:hover:text-gray-700"
               }`}
             >
               {tab.label}
@@ -104,19 +104,19 @@ const FeaturesBus: React.FC = () => {
       {/* Active Tab Content */}
       <div className="flex items-start justify-between gap-8">
         <div className="flex-1 max-w-md">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             {tabContent[activeTab].heading}
           </h2>
           <div className="space-y-4">
             {tabContent[activeTab].items.map((item, index) => (
-              <p key={index} className="text-gray-700 leading-relaxed">
+              <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 {item}
               </p>
             ))}
           </div>
         </div>
         <div className="flex-1 max-w-md">
-          <div className="bg-white rounded-2xl shadow-xl">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl">
             <img
               src={tabContent[activeTab].image}
               alt={tabContent[activeTab].heading}
@@ -134,26 +134,25 @@ const FeaturesBus: React.FC = () => {
         return (
           <div
             key={tab.id}
-            className="bg-white rounded-2xl shadow-md p-4"
+            className="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-4"
           >
-               {content.image && (
+            {content.image && (
               <img
                 src={content.image}
                 alt={content.heading}
                 className="w-full rounded-lg object-contain"
               />
-            )} 
-            <h2 className="text-xl font-bold text-gray-900 mb-4">
+            )}
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
               {content.heading}
             </h2>
             <div className="space-y-2 mb-4">
               {content.items.map((item, i) => (
-                <p key={i} className="text-gray-700 text-sm leading-relaxed">
+                <p key={i} className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                   {item}
                 </p>
               ))}
             </div>
-         
           </div>
         );
       })}
@@ -161,6 +160,7 @@ const FeaturesBus: React.FC = () => {
 
   </div>
 </div>
+
 
   );
 };

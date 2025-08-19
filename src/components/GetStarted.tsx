@@ -16,7 +16,7 @@ const GetStarted: React.FC = () => {
   <div className="flex flex-col lg:flex-row items-center justify-center font-sans font-medium text-gray-900 gap-4 lg:gap-2">
     
     {/* Line 1: Heading */}
-    <span className="text-2xl sm:text-3xl lg:text-4xl">
+    <span className="text-2xl sm:text-3xl lg:text-4xl dark:text-white">
       Get started as a
     </span>
 
