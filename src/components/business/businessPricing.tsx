@@ -1,6 +1,9 @@
 import React from "react";
-import { ArrowRight, Upload, Search, Eye } from "lucide-react";
+import { ArrowRight, Upload, Search, Eye, ChevronDown  } from "lucide-react";
 import illustration from '/Business/pricing.png';
+
+import { Disclosure } from "@headlessui/react";
+
 
 const BusinessPricing = () => {
   return (
@@ -22,7 +25,7 @@ const BusinessPricing = () => {
         {/* Text Section */}
         <div className="w-full lg:w-[45%] text-left lg:text-left">
           <h2 className="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100">
-            Be a <span className="text-blue-600 dark:text-blue-400">‘Founding User’</span>
+            Be a <br className="block md:hidden" /> <span className="text-blue-600 dark:text-blue-400">‘Founding User’</span>
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-8">
             Join Archinza during Beta to unlock exclusive features like more uploads, 
@@ -30,29 +33,115 @@ const BusinessPricing = () => {
           </p>
 
           {/* Features */}
-          <div className="flex flex-col gap-6 text-left">
-            <div className="flex items-start gap-3">
-              <Upload className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
-                <span className="font-semibold">5x Upload Capacity:</span> More storage. More auto-fetched data. More credibility minus the manual effort.
-              </p>
+              <div className="flex flex-col gap-6 text-left">
+      {/* Desktop View */}
+      <div className="hidden md:flex flex-col gap-6">
+        <div className="flex items-start gap-3">
+          <Upload className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
+          <p className="text-gray-700 dark:text-gray-300 text-sm">
+            <span className="font-semibold">5x Upload Capacity:</span> More
+            storage. More auto-fetched data. More credibility minus the manual
+            effort.
+          </p>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <Search className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
+          <p className="text-gray-700 dark:text-gray-300 text-sm">
+            <span className="font-semibold">Smarter Discovery. Wider Reach:</span>{" "}
+            Get matched through intelligent text + image search. Be seen by the
+            right clients, faster.
+          </p>
+        </div>
+
+        <div className="flex items-start gap-3">
+          <Eye className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
+          <p className="text-gray-700 dark:text-gray-300 text-sm">
+            <span className="font-semibold">Control Your Visibility:</span> Want
+            to stay public but hide from competitors? Share only with audiences
+            you choose.
+          </p>
+        </div>
+      </div>
+
+      {/* Mobile Accordion */}
+      <div className=" font-sans text-gray-700 dark:text-gray-300 md:hidden flex flex-col gap-1">
+        <Disclosure>
+          {({ open }) => (
+            <div className="border-b p-3">
+
+              <Disclosure.Button className="flex justify-between items-center w-full text-left">
+                <span className="flex items-center gap-2">
+                  <Upload className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="font-semibold text-sm">5x Upload Capacity</span>
+                </span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    open ? "rotate-180" : ""
+                  }`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="mt-2 text-gray-700 dark:text-gray-300 text-sm">
+                More storage. More auto-fetched data. More credibility minus the
+                manual effort.
+              </Disclosure.Panel>
             </div>
-            <div className="flex items-start gap-3">
-              <Search className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
-                <span className="font-semibold">Smarter Discovery. Wider Reach:</span> Get matched through intelligent text + image search. Be seen by the right clients, faster.
-              </p>
+          )}
+        </Disclosure>
+
+        <Disclosure>
+          {({ open }) => (
+            <div className="border-b p-3">
+              <Disclosure.Button className="flex justify-between items-center w-full text-left">
+                <span className="flex items-center gap-2">
+                  <Search className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="font-semibold text-sm">
+                    Smarter Discovery. Wider Reach
+                  </span>
+                </span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    open ? "rotate-180" : ""
+                  }`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="mt-2 text-gray-700 dark:text-gray-300 text-sm">
+                Get matched through intelligent text + image search. Be seen by
+                the right clients, faster.
+              </Disclosure.Panel>
             </div>
-            <div className="flex items-start gap-3">
-              <Eye className="w-6 h-6 text-blue-600 dark:text-blue-400 shrink-0 mt-1" />
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
-                <span className="font-semibold">Control Your Visibility:</span> Want to stay public but hide from competitors? Share only with audiences you choose.
-              </p>
+          )}
+        </Disclosure>
+
+        <Disclosure>
+          {({ open }) => (
+            <div className="border-b p-3">
+              <Disclosure.Button className="flex justify-between items-center w-full text-left">
+                <span className="flex items-center gap-2">
+                  <Eye className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="font-semibold text-sm">
+                    Control Your Visibility
+                  </span>
+                </span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    open ? "rotate-180" : ""
+                  }`}
+                />
+              </Disclosure.Button>
+              <Disclosure.Panel className="mt-2 text-gray-700 dark:text-gray-300 text-sm">
+                Want to stay public but hide from competitors? Share only with
+                audiences you choose.
+              </Disclosure.Panel>
             </div>
-          </div>
+          )}
+        </Disclosure>
+      </div>
+    </div>
+
 
           {/* CTA */}
-          <div className="mt-8 flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-2">
+          <div className="mt-8 w-fit flex flex-col sm:flex-row justify-center sm:justify-start gap-4 pt-2">
             <a
               href="#"
               className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-full font-medium hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition"
