@@ -26,7 +26,7 @@ const sectionsData = [
     description:
       'Looking to bring your projects to life? Reach the right businesses, search products and materials, find inspiration, and get quick answers, all on Archinza Web and the Ask Anything WhatsApp bot.',
     tags: ['Beautiful Profiles', 'Easy Updates', 'SEO Ready'],
-    image: '/Personal/Artist.jpg',
+    image: '/Personal/Artist.png',
     buttonText: 'Showcase Now',
   },
   {
