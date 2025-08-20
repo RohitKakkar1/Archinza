@@ -80,11 +80,11 @@ const WhoIsItFor: React.FC = () => {
             </div>
 
             {/* Image Section */}
-            <div className="w-full lg:w-1/2 relative aspect-video rounded-2xl overflow-hidden">
+            <div className="w-full lg:w-1/2 relative aspect-video rounded-2xl overflow-visible">
               <img
                 src={section.image}
                 alt={section.heading}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover overflow-visible"
               />
             </div>
           </div>
