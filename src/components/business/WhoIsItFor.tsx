@@ -35,7 +35,7 @@ const sectionsData = [
     description:
       'Archinza links national and international brands to the design and construction ecosystem, expanding reach, attracting the right buyers and industry professionals, and providing insights.',
     tags: ['Furniture Manufacturer', 'Lighting Fixtures', 'Flooring Solutions'],
-    image: '/Business/SupportDesigns.png',
+    image: '/Business/Manufactureres.png',
     buttonText: 'Showcase Now',
   },
     {
