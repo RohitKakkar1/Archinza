@@ -17,7 +17,7 @@ const sectionsData = [
     description:
       'Archinza helps execution-focused businesses present their work to a targeted industry audience, get discovered by clients and professionals, generate qualified leads and gain insights.',
     tags: ['Turnkey Contracting', 'Furniture Manufacturing', 'On-site Fabrication', 'Execution', 'Installation'],
-    image: '/Business/Manufactureres.png',
+    image: '/Business/Build_Install.png',
     buttonText: 'Explore Vendors',
   },
   {
@@ -26,7 +26,7 @@ const sectionsData = [
     description:
       'Archinza helps vendors increase product visibility among buyers, attract professional interest, generate qualified leads, and gain insights.',
     tags: ['Showrooms', 'Distributors', 'Importers', 'Vendors'],
-    image: '/Business/Onsiteprofessionals.png',
+    image: '/Business/Sell.png',
     buttonText: 'Showcase Now',
   },
   {
