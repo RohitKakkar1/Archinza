@@ -8,7 +8,7 @@ const sectionsData = [
     description:
       'Find professionals, products, materials and services for your projects, all in one place. Connect with businesses on demand, use the Ask Anything WhatsApp bot for quick answers, and explore more on Archinza Web.',
     tags: ['Design & Consult', 'Manufacture & Resell', 'Support Design'],
-    image: '/Personal/Owner.webp',
+    image: '/Personal/Owner.png',
     buttonText: 'Get Started on Archinza Web',
   },
   {
