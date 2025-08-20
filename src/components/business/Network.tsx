@@ -1,20 +1,14 @@
 import React from 'react';
 import { MessageCircle, Car, Utensils, Calendar } from 'lucide-react';
-import GlobeSVG from '/Business/main-2.svg'; // adjust path
+import GlobeSVG from '/Business/main-2.svg';
 
 
 const NetworkSection = () => {
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <section className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white relative overflow-hidden transition-colors duration-300">
       {/* Background grid pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            radial-gradient(circle at 25% 25%, rgb(59 130 246) 2px, transparent 2px),
-            radial-gradient(circle at 75% 75%, rgb(59 130 246) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}></div>
+        <div className="absolute inset-0" ></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-16 lg:py-24">

@@ -74,7 +74,7 @@ const Benefits: React.FC = () => {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-12">
-      <div className="text-center bg-blue-100 mb-6 py-16 dark:bg-gray-800">
+      <div className="text-center bg-blue-100 mb-6 py-16 dark:bg-gray-900">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600  dark:text-blue-400">
           What all we offer
         </h2>

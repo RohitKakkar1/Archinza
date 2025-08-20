@@ -69,7 +69,7 @@ const Features: React.FC = () => {
   return (
     <section className="flex-1 ">
             {/* Header */}
-        <div className="text-center bg-blue-100 mb-6 py-16 lg:mb-6 dark:bg-gray-800">
+        <div className="text-center bg-blue-100 mb-6 py-16 lg:mb-6 dark:bg-gray-900">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
             How we help you
           </h2>
