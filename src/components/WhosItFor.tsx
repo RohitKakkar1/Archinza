@@ -13,7 +13,7 @@ const WhosItFor: React.FC = () => {
             Who is it for
           </h2>
           <p className="text-lg sm:text-xl font-sans  text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-           Archinza is a discovery platform in the AECD space where professionals, businesses, students, and clients explore services, discover products, and get inspired within a industry-focused ecosystem.
+Archinza is a <span className="text-orange-500">discovery platform</span> for everyone in the AECD ecosystem from <span className="font-semibold">professionals and businesses to students and clients.</span>
           </p>
         </div>
 
@@ -22,18 +22,18 @@ const WhosItFor: React.FC = () => {
           {/* Archinza for Businesses */}
           <div className="space-y-6 rounded-2xl p-4 md:p-8 border border-gray-200 dark:border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.03)]">
             {/* Image Container */}
-            <div className="relative aspect-[1.9]  rounded-2xl overflow-hidden ">
+            <div className="relative aspect-[1.9]  rounded-2xl overflow-visible ">
               {/* Desktop Image */}
               <img 
                 src="/images/Business_homepage.png"
                 alt="Business professionals collaborating"
-                className="hidden sm:block"
+                className="hidden sm:block overflow-visible"
               />
               {/* Mobile Image */}
               <img 
                 src="/images/Business_homepage.png"
                 alt="Business team meeting"
-                className="sm:hidden"
+                className="sm:hidden overflow-visible"
               />
             </div>
 
@@ -46,22 +46,66 @@ const WhosItFor: React.FC = () => {
   </h3>
 
   {/* Tags */}
-  <div className="flex flex-row flex-wrap justify-center sm:justify-start gap-2">
-    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Design & Consult
-    </span>
-    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Build or Install
-    </span>
-    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Sell products or Materials
-    </span>
-    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Manufacture & Distribute
-    </span><span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-      Support Design
-    </span>
+<div className="relative overflow-hidden">
+  {/* Mobile: Scrolling tags */}
+  <div className="flex w-[80vw]  animate-scroll sm:hidden">
+    {/* First set */}
+    <div className="flex gap-2 min-w-screen px-2 shrink-0">
+      {[
+        "Design & Consult",
+        "Build or Install",
+        "Sell products or Materials",
+        "Manufacture & Distribute",
+        "PR Agency",
+        "Events",
+      ].map((tag, idx) => (
+        <span
+          key={idx}
+          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 
+                     text-blue-700 dark:text-blue-300 
+                     rounded-full text-sm font-medium whitespace-nowrap"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    {/* Duplicate set */}
+    <div className="flex gap-2 min-w-screen px-2 shrink-0">
+      {[
+        "Design & Consult",
+        "Build or Install",
+        "Sell products or Materials",
+        "Manufacture & Distribute",
+        "PR Agency",
+        "Events",
+      ].map((tag, idx) => (
+        <span
+          key={idx + 'dup'}
+          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 
+                     text-blue-700 dark:text-blue-300 
+                     rounded-full text-sm font-medium whitespace-nowrap"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
   </div>
+
+  {/* Desktop: Static wrapped layout */}
+  <div className="hidden sm:flex flex-row flex-wrap justify-center sm:justify-start gap-2">
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Design & Consult</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Build or Install</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Sell products or Materials</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Manufacture & Distribute</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">PR Agency</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Events</span>
+  </div>
+</div>
+
+
+
+
 
   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
     Showcase offerings, reach clients, professionals, and grow visibility.
@@ -92,18 +136,18 @@ const WhosItFor: React.FC = () => {
           {/* Archinza for Personal Use */}
           <div className="space-y-6 rounded-2xl p-4 md:p-8 border border-gray-200 dark:border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(255,255,255,0.03)]">
             {/* Image Container */}
-            <div className="relative  aspect-[1.9]  rounded-2xl overflow-hidden ">
+            <div className="relative  aspect-[1.9]  rounded-2xl overflow-hidden overflow-visible">
               {/* Desktop Image */}
               <img 
                 src="/images/Personal_homepage.png"
                 alt="Person working on home design"
-                className="hidden sm:block  "
+                className="hidden sm:block  overflow-visible "
               />
               {/* Mobile Image */}
               <img 
                 src="/images/Personal_homepage.png"
                 alt="Home interior design planning"
-                className="sm:hidden  "
+                className="sm:hidden  overflow-visible"
               />
             </div>
 
@@ -113,24 +157,66 @@ const WhosItFor: React.FC = () => {
                 Archinza for Personal Use
               </h3>
                           {/* Tags */}
-            <div className="flex flex-row flex-wrap gap-2">
-              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                Business/ Firm Owner
-              </span>
-              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                Working Professional
-              </span>
-              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                Students
-              </span>
-              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                Home-owner
-              </span>
-              <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                Artist / Freelancer
-              </span>
-              
-            </div>
+<div className="relative overflow-hidden">
+  {/* Mobile: Scrolling tags */}
+  <div className="flex w-[80vw]  animate-scroll sm:hidden">
+    {/* First set */}
+    <div className="flex gap-2 min-w-screen px-2 shrink-0">
+      {[
+        "Business Owner",
+        "Firm Owner",
+        "Working Professional",
+        "Student",
+        "Freelancer",
+        "Artist",
+        "Home Owner",
+      ].map((tag, idx) => (
+        <span
+          key={idx}
+          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 
+                     text-blue-700 dark:text-blue-300 
+                     rounded-full text-sm font-medium whitespace-nowrap"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    {/* Duplicate set */}
+    <div className="flex gap-2 min-w-screen px-2 shrink-0">
+      {[
+        "Business Owner",
+        "Firm Owner",
+        "Working Professional",
+        "Student",
+        "Freelancer",
+        "Artist",
+        "Home Owner",
+      ].map((tag, idx) => (
+        <span
+          key={idx + 'dup'}
+          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 
+                     text-blue-700 dark:text-blue-300 
+                     rounded-full text-sm font-medium whitespace-nowrap"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* Desktop: Static wrapped layout */}
+  <div className="hidden sm:flex flex-row flex-wrap justify-center sm:justify-start gap-2">
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Business Owner</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Firm Owner</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Working Professional</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Student</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Freelancer</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Artist</span>
+    <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">Home Owner</span>
+
+  </div>
+</div>
 
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                 Discover the right people, products, and materials.
