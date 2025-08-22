@@ -27,7 +27,7 @@ Archinza is a <span className="text-orange-500">discovery platform</span> for ev
               <img 
                 src="/images/Business_homepage.png"
                 alt="Business professionals collaborating"
-                className="hidden sm:block overflow-visible"
+                className="hidden  h-fit sm:block overflow-visible"
               />
               {/* Mobile Image */}
               <img 
@@ -141,7 +141,7 @@ Archinza is a <span className="text-orange-500">discovery platform</span> for ev
               <img 
                 src="/images/Personal_homepage.png"
                 alt="Person working on home design"
-                className="hidden sm:block  overflow-visible "
+                className="hidden h-fit sm:block  overflow-visible "
               />
               {/* Mobile Image */}
               <img 
