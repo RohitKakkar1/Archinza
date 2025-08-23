@@ -6,6 +6,9 @@ import Events from "./Events";
 import AboutMobile from "./AboutMobile";
 import Header from "../Header";
 import Contact from "./Contact";
+import MasonryScroll from "./MasonaryScroll";
+import { Share2 } from "lucide-react";
+
 
 export default function DBMobile() {
   const tabs = ["About", "Gallery", "PDFs", "Courses", "Events", "Contact"];
@@ -52,18 +55,18 @@ export default function DBMobile() {
 
       <Header />
 
-<div className="flex flex-col gap-2">
-      {/* Tabs (Sticky on Mobile) */}
-      <div className="block lg:hidden sticky top-0 z-20 bg-white">
+      <MasonryScroll />
 
-      <div className="w-full sm:hidden overflow-hidden">
-        <img
-          src="/BusinessView/header.png"
-          alt="Project"
-          className="w-full h-auto object-cover"
-        />
-      </div>
-        <div className="flex gap-3 py-2 mb-0 overflow-x-auto whitespace-nowrap 
+<div
+  className="relative font-sans rounded-t-xl bg-gray-50 [clip-path:inset(0_round_0.75rem_0.75rem_0_0)]"
+>      {/* Tabs (Sticky on Mobile) */}
+      <div className="block  lg:hidden sticky top-0 z-20 bg-white">
+
+     <div className="w-full py-2 px-4 bg-blue-950 sm:hidden overflow-hidden flex items-center justify-between">
+  <h2 className="text-lg text-white font-regular">LTDF Studios</h2>
+  <div className="bg-white p-2 rounded-3xl"><Share2 className="w-5 h-5 text-blue-900 cursor-pointer" /></div>
+</div>
+        <div className="flex gap-3 px-4 py-2 mb-0 overflow-x-auto whitespace-nowrap 
                         [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {tabs.map((tab) => (
             <button
