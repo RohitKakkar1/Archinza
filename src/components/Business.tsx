@@ -9,10 +9,13 @@ import Benefits from "./business/benefits";
 import Footer from "./Footer";
 import FeaturesBus from "./features";
 import BusinessPricing from "./business/businessPricing";
+import Header from "./Header";
 
 const Business = () => {
   return (
 <section className="flex-1 px-4 pt-20 md:pt-0">
+            <Header />
+
     
     <Bus_Offering />
     <NetworkSection />

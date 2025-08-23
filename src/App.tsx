@@ -16,6 +16,7 @@ import FoundingUserCard from './components/foundingUserCard.tsx';
 import ScrollToTop from './components/scrollTop.tsx';
 import FAQ from './components/FAQ.tsx';
 import Footer from './components/Footer.tsx';
+import Businessview from './components/Business_View.tsx';
 import ShareSection from './components/ShareSection.tsx';
 
 
@@ -26,13 +27,14 @@ function App() {
                 <ScrollToTop /> {/* ⬅ added here */}
 
         <div className="min-h-screen bg-white dark:bg-gray-900 duration-300">
-          <Header />
           <Routes>
             <Route
               path="/"
               element={
                 <>
                   <>
+                            <Header />
+
                     {/* Desktop View */}
                     <div className="hidden md:block">
                       <HeroSection />
@@ -68,6 +70,9 @@ function App() {
             />
             <Route path="/business" element={<Business />} />
             <Route path="/personal" element={<Personal />} />
+
+            <Route path="/businessview" element={<Businessview />} />
+            
           </Routes>
         </div>
       </Router>

@@ -8,10 +8,14 @@ import Benefits from "./personal/benefits";
  import NetworkSection from "./personal/Network";
  import Footer from "./Footer";
 import FeaturesUser from "./FeaturesUser";
+import Header from "./Header";
 
 const Personal = () => {
   return (
 <section className="flex-1 px-4 pt-20 md:pt-0">
+
+            <Header />
+
     
     <Bus_Offering />
     <SectionToggle />

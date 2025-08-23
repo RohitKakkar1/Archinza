@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 sm:px-6 lg:px-8 py-4 rounded-b-xl">
+<header className="relative lg:fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 sm:px-2 lg:px-8 py-2 lg:py-4 rounded-b-xl">
       <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-between">
         
         {/* MOBILE HEADER */}

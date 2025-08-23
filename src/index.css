@@ -60,3 +60,13 @@
 .animate-scroll {
   animation: scroll 10s linear infinite;
 }
+
+/* hide scrollbar globally */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
