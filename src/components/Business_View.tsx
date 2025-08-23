@@ -29,7 +29,7 @@ const Businessview = () => {
   <div className="flex flex-col bg-white lg:flex-row gap-8">
 
     {/* Left Part - About (30%) */}
-    <div className="w-full lg:w-1/3 lg:block">
+    <div className="w-full lg:w-1/3  hidden lg:block">
       {/* Show on Desktop */}
       <div className="hidden lg:block">
         <AboutDesktop />
@@ -37,7 +37,7 @@ const Businessview = () => {
     </div>
 
     {/* Right Part - Gallery (70%) */}
-    <div className="w-full lg:w-2/3  lg:block">
+    <div className="w-full lg:w-2/3 hidden lg:block">
       {/* Show on Desktop */}
       <div className="hidden lg:block">
         <RightPanelDesktop />

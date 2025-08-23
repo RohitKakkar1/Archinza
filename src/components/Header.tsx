@@ -18,11 +18,11 @@ const Header: React.FC = () => {
             onClick={() => setMenuOpen(!menuOpen)}
             className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-{menuOpen ? (
-  <X className="w-6 h-6 text-gray-800 dark:text-white" />
-) : (
-  <Menu className="w-6 h-6 text-gray-800 dark:text-white" />
-)}
+          {menuOpen ? (
+            <X className="w-6 h-6 text-gray-800 dark:text-white" />
+          ) : (
+            <Menu className="w-6 h-6 text-gray-800 dark:text-white" />
+          )}
 
           </button>
 
