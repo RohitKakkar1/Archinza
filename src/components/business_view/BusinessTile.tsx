@@ -101,7 +101,7 @@ export default function BusinessCarousel() {
 
   return (
     <div className="w-full px-4">
-      <h2 className="pb-4 font-medium">Businesses on Archinza</h2>
+      <h2 className="pb-4 font-medium dark:text-white">Businesses on Archinza</h2>
 
       {/* Carousel */}
       <div

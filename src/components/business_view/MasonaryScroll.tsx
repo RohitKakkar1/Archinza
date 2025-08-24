@@ -71,7 +71,7 @@ const generateColumns = () => {
   return (
     <div
       ref={scrollRef}
-      className="w-full overflow-x-auto p-2 bg-white scrollbar-hide"
+      className="w-full overflow-x-auto p-2 bg-white dark:bg-gray-900 scrollbar-hide"
     >
       <div className="flex h-[320px] gap-2">
         {columns.map((col, idx) => {

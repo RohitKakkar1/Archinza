@@ -14,7 +14,7 @@ export default function GalleryUnit() {
   return (
    <section className="max-w-7xl mx-auto px-4 py-2">
   <div className="flex justify-between items-center mb-4">
-    <h2 className="text-l font-medium">Project Photos & Renders</h2>
+    <h2 className="text-l font-medium dark:text-white">Project Photos & Renders</h2>
     <a href="#" className="text-blue-500 text-sm font-medium">View All</a>
   </div>
 
