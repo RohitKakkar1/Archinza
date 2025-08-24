@@ -4,7 +4,6 @@ import { MapPin, Globe, Calendar, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, StarIcon, FireIcon } from '@heroicons/react/24/solid';
 import ThirdCard from "./ThirdCard";
-import ViewMoreButton from "./AboutBottom";
 
 const items = [
   {
@@ -59,8 +58,7 @@ const AboutMobile: React.FC = () => {
           <div className="flex items-center justify-between">
             <h2 className="text-m font-bold">Business Snapshot</h2>
             <button className="text-blue-600 dark:text-blue-400 text-sm font-semibold hover:underline">
-                <ViewMoreButton />
-
+              View More
             </button>
           </div>
 
