@@ -70,3 +70,30 @@
   scrollbar-width: none;     /* Firefox */
 }
 
+@keyframes slideRightDisappear {
+  0% {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  99% {
+    transform: translateX(50px);
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(50px);
+    visibility: hidden;
+  }
+}
+
+.animate-slide-right-disappear {
+  animation: slideRightDisappear 5s forwards;
+}
+
+/* Hide scrollbar for all browsers */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
