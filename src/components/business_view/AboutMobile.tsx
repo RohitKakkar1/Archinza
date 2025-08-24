@@ -4,7 +4,7 @@ import { MapPin, Globe, Calendar, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, StarIcon, FireIcon } from '@heroicons/react/24/solid';
 import ThirdCard from "./ThirdCard";
-import ViewMoreButton from "./AboutBottomSHeet";
+import ViewMoreButton from "./AboutBottom";
 
 const items = [
   {
