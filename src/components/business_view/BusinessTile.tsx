@@ -15,41 +15,42 @@ const cards: CardData[] = [
     id: 0,
     title: "Have a Business in the AECD Industry?",
     subtitle: "Increase the business visibility.",
-    img: "/image1.png",
+    img: "/BusinessView/Build_Install.png",
     buttonText: "Register on Archinza",
     color: "bg-blue-900",
   },
   {
     id: 1,
-    title: "Expand Your Reach to New Clients",
-    subtitle: "Get discovered by potential customers.",
-    img: "/image2.png",
+    title: "Have a Business in the AECD Industry?",
+    subtitle: "Increase the business visibility.",
+    img: "/BusinessView/Build_Install.png",
     buttonText: "Sign Up Now",
     color: "bg-gray-600",
   },
   {
     id: 2,
-    title: "Boost Your Online Presence",
-    subtitle: "Stand out among competitors.",
-    img: "/image3.png",
+    title: "Have a Business in the AECD Industry?",
+    subtitle: "Increase the business visibility.",
+    img: "/BusinessView/Build_Install.png",
     buttonText: "Join Archinza",
     color: "bg-orange-800",
   },
     {
     id: 2,
-    title: "Boost Your Online Presence",
-    subtitle: "Stand out among competitors.",
-    img: "/image3.png",
+    title: "Have a Business in the AECD Industry?",
+    subtitle: "Increase the business visibility.",
+    img: "/BusinessView/Build_Install.png",
+
     buttonText: "Join Archinza",
-    color: "bg-orange-800",
+    color: "bg-purple-800",
   },
     {
     id: 2,
-    title: "Boost Your Online Presence",
-    subtitle: "Stand out among competitors.",
-    img: "/image3.png",
+    title: "Have a Business in the AECD Industry?",
+    subtitle: "Increase the business visibility.",
+    img: "/BusinessView/Build_Install.png",
     buttonText: "Join Archinza",
-    color: "bg-orange-800",
+    color: "bg-blue-800",
   },
 ]
 
@@ -112,14 +113,14 @@ export default function BusinessCarousel() {
           <div
             key={card.id}
             ref={index === 0 ? cardRef : null}
-            className={`flex-shrink-0 w-72 ${card.color} rounded-xl p-4 shadow-lg flex items-center cursor-pointer hover:opacity-90 transition`}
+            className={`flex-shrink-0 w-72 ${card.color} rounded-xl gap-2 p-4 shadow-lg flex items-center cursor-pointer hover:opacity-90 transition`}
           >
             <div className="flex-1 flex flex-col justify-between">
               <div className="mb-4">
                 <p className="text-white font-medium text-xs sm:text-base">
                   {card.title}
                 </p>
-                <p className="text-white font-regular text-xs sm:text-base">
+                <p className="text-white font-light text-xs sm:text-base">
                   {card.subtitle}
                 </p>
               </div>
@@ -132,7 +133,7 @@ export default function BusinessCarousel() {
             <img
               src={card.img}
               alt="Business"
-              className="w-16 h-16 rounded-full mr-4 object-cover"
+              className="w-32 h-28  object-cover"
             />
           </div>
         ))}

@@ -1,5 +1,31 @@
 import { useState } from "react"
 import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid"
+// add these imports (top of the file)
+import {
+  Home,
+  Building2,
+  Store,
+  Hotel,
+  Factory,
+  Landmark,
+  Sparkles,
+  Palette,
+} from "lucide-react";
+
+// updated Tile component
+const Tile = ({ icon: Icon, label }: { icon: React.ElementType; label: string }) => (
+  <div
+    className="flex flex-col items-center justify-center w-24 h-24
+               rounded-xl bg-gray-100 dark:bg-gray-700 
+               border border-gray-200 dark:border-gray-600
+               text-gray-800 dark:text-gray-200 
+               shadow-sm"
+  >
+    <Icon className="w-6 h-6 mb-1" /> {/* bigger icon */}
+    <span className="text-xs font-medium text-center">{label}</span>
+  </div>
+);
+
 
 type SpecItemProps = {
   label: string
@@ -26,7 +52,7 @@ export default function ThirdCard() {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h2 className="text-m font-bold">Design Snapshot</h2>
+        <h2 className="text-m font-bold">Work Style</h2>
         {isOpen ? (
           <MinusIcon className="w-5 h-5 text-gray-600" />
         ) : (
@@ -61,22 +87,29 @@ export default function ThirdCard() {
           </div>
 
           {/* Tab content */}
-          <div className="mt-3 space-y-2">
-            {activeTab === "typology" && (
-              <div className="space-y-2">
-                <SpecItem label="Renovation" value="145" />
-                <SpecItem label="Project Typology" value="Commercial" />
-                <SpecItem label="Design Styles" value="Modern, Minimal" />
-              </div>
-            )}
-            {activeTab === "styles" && (
-              <div className="space-y-2">
-                <SpecItem label="Interior Styles" value="Contemporary" />
-                <SpecItem label="Exterior Styles" value="Industrial" />
-                <SpecItem label="Landscape Styles" value="Eco-friendly" />
-              </div>
-            )}
-          </div>
+<div className="mt-3 space-y-2">
+  {activeTab === "typology" && (
+    <div className="flex flex-wrap gap-2">
+      <Tile icon={Home} label="Residential" />
+      <Tile icon={Building2} label="Commercial" />
+      <Tile icon={Store} label="Retail" />
+      <Tile icon={Hotel} label="Hospitality" />
+      <Tile icon={Factory} label="Industrial" />
+      <Tile icon={Landmark} label="Institutional" />
+    </div>
+  )}
+
+  {activeTab === "styles" && (
+    <div className="flex flex-wrap gap-2">
+      <Tile icon={Sparkles} label="Minimal" />
+      <Tile icon={Landmark} label="Neoclassical" />
+      <Tile icon={Palette} label="Modern" />
+      <Tile icon={Sparkles} label="Contemporary" />
+            <Tile icon={Sparkles} label="Bespoke" />
+    </div>
+  )}
+</div>
+
         </div>
       )}
     </div>
