@@ -82,7 +82,7 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
                 Sign Up
               </button>
             </Link>
-            <Link to="/businessview" target="_blank">
+            <Link to="http://174.138.123.146:9028/login" target="_blank">
               <button className="px-4 py-2 mt-2 bg-white text-blue-700 rounded-full hover:bg-blue-700">
                 Login
               </button>
@@ -173,7 +173,7 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
             <Link to="http://174.138.123.146:9028/login" target="_blank" rel="noopener noreferrer">
               <button className="hover:text-blue-600 dark:text-white">Log-In</button>
             </Link>
-            <Link to="/businessview" target="_blank" rel="noopener noreferrer">
+            <Link to="http://174.138.123.146:9028/register" target="_blank" rel="noopener noreferrer">
               <button className="group inline-flex items-center justify-center px-6 py-3 border border-blue-600 bg-blue-600 text-white rounded-full hover:bg-blue-700 hover:border-blue-700">
                 Sign Up
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
