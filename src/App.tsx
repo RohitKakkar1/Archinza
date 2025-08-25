@@ -20,6 +20,7 @@ import Businessview from './components/Business_View.tsx';
 import Chirmee from './components/Chirmee.tsx';
 import DeltaFaucet from './components/DeltaFaucet.tsx';
 import ShareSection from './components/ShareSection.tsx';
+import NoPhotos from './components/nophotos.tsx';
 import Wriver from './components/Wriver.tsx';
 
 
@@ -78,6 +79,8 @@ function App() {
             <Route path="/chirmee" element={<Chirmee />} />
             <Route path="/delta-faucets" element={<DeltaFaucet />} />
                         <Route path="/wriver" element={<Wriver />} />
+                                    <Route path="/no-photos" element={<NoPhotos />} />
+
 
 
           </Routes>
