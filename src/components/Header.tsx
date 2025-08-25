@@ -87,16 +87,7 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
                 Login
               </button>
             </Link>
-            <NavLink
-              to="/businessview"
-              className={({ isActive }) =>
-                `hover:text-blue-600 transition ${
-                  isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : ''
-                }`
-              }
-            >
-              View page
-            </NavLink>
+
             
              {/* Dark mode toggle */}
             <div className="flex items-center justify-start pt-3">
@@ -190,16 +181,7 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
                 </svg>
               </button>
             </Link>
-              <NavLink
-              to="/businessview"
-              className={({ isActive }) =>
-                `hover:text-blue-600 transition ${
-                  isActive ? 'text-blue-600 font-semibold dark:text-blue-500' : ''
-                }`
-              }
-            >
-              View page
-            </NavLink>
+
           </div>
         </div>
       </div>
