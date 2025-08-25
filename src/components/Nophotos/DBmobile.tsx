@@ -72,7 +72,7 @@ export default function DBMobile() {
                   className="object-contain rounded-xl max-w-full max-h-full"
                 />
               </div>
-              <h2 className="text-lg text-white font-regular">Sai Kripa Consultancy and Engeneering Private Limited</h2>
+              <h2 className="text-lg text-white font-regular">Sai Kripa Consultancy and Engeneering Private</h2>
             </div>
             <div className="bg-white dark:bg-white dark:bg-gray-700 p-2 rounded-3xl">
               <Share2 className="w-5 h-5 text-blue-900 dark:text-blue-800  cursor-pointer" />
