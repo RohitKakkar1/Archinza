@@ -23,7 +23,7 @@ import ShareSection from './components/ShareSection.tsx';
 import NoPhotos from './components/nophotos.tsx';
 import Wriver from './components/Wriver.tsx';
 import DeltaFaucet2 from './components/DeltaFaucet2.tsx';
-
+import Wriver_Edit from './components/Wriver-Edit.tsx';
 
 function App() {
   return (
@@ -82,6 +82,7 @@ function App() {
                         <Route path="/wriver" element={<Wriver />} />
                                     <Route path="/no-photos" element={<NoPhotos />} />
             <Route path="/delta-faucets-2" element={<DeltaFaucet2 />} />
+            <Route path="/wriver-edit" element={<Wriver_Edit />} />
 
 
 

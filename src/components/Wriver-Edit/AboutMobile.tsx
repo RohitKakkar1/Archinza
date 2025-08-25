@@ -4,6 +4,7 @@ import { MapPin, Globe, Calendar, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, StarIcon, FireIcon } from '@heroicons/react/24/solid';
 import ThirdCard from "./ThirdCard";
+import BusinessStatus from "./BusinessStatus";
 
 const items = [
   {
@@ -52,13 +53,14 @@ const AboutMobile: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full p-4 gap-4 text-gray-900 dark:text-gray-100">
+      <BusinessStatus />
       {/* Card 1 */}
       <div className="dark:border-gray-700">
         <div className="h-auto  rounded-lg   flex flex-col transition-colors duration-300">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold">About</h2>
             <button className="text-blue-600 dark:text-blue-400 text-sm font-semibold hover:underline">
-              View More
+              Edit About
             </button>
           </div>
 
@@ -157,7 +159,7 @@ const AboutMobile: React.FC = () => {
           </p>
         </div>
 
-        <div className="pt-4">
+            <div className="pt-4">
              <ThirdCard />
              </div>
       </div>

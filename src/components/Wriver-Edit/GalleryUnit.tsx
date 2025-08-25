@@ -13,9 +13,11 @@ export default function GalleryUnit() {
 
   return (
    <section className="">
+
+
   <div className="flex justify-between items-center mb-4">
     <h2 className="text-l font-medium dark:text-white">Project Photos & Renders</h2>
-    <a href="#" className="text-blue-500 text-sm font-medium">View All</a>
+    <a href="#" className="text-blue-500 text-sm font-medium">Edit Photos</a>
   </div>
 
   {/* Desktop */}

@@ -88,20 +88,7 @@ const BusinessFooter: React.FC = () => {
           <a href="#" className="hover:underline">Privacy Policy</a> | <a href="#" className="hover:underline">FAQs</a>
         </p>
 
-<div className="fixed bottom-5 right-5 z-20 flex items-center gap-2">
-  {/* Text */}
-  <div className="bg-white font-sans text-l text-black px-3 py-2 rounded-xl shadow animate-slide-right-disappear">
-    Talk to business
-  </div>
 
-  {/* Icon */}
-  <a
-    href="#"
-    className="bg-blue-600 z-20 rounded-full shadow-lg  flex items-center justify-center"
-  >
-    <img src={TalkIcon} alt="Talk to Business" className="w-15 h-15" />
-  </a>
-</div>
 
 
       </div>

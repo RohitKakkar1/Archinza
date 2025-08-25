@@ -6,11 +6,13 @@ import Events from "./Events";
 import AboutMobile from "./AboutMobile";
 import Header from "../Header";
 import Contact from "./Contact";
-import MasonryScroll from "./MasonaryScroll";
+import MasonryScroll_Edit from "./MasonaryScroll_Edit";
 import { Share2 } from "lucide-react";
 import BusinessTile from "./BusinessTile";
 import BottomBar from "./BottomBar";
-import AskBusiness from "./AskBusiness";
+import { Pencil } from "lucide-react";
+import EditBusiness from "./EditBusiness";
+
 
 export default function DBMobile() {
   const tabs = ["About", "Gallery", "PDFs", "Contact"];
@@ -46,7 +48,6 @@ export default function DBMobile() {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll to section when clicking a tab
 const handleTabClick = (tab: string) => {
   setActive(tab);
   const element = sectionRefs[tab].current;
@@ -68,13 +69,12 @@ const handleTabClick = (tab: string) => {
     <section className="top-0">
       <Header />
       <hr className="border-t-2 border-gray-300 dark:border-gray-700" />
+      <MasonryScroll_Edit />
 
       <div
         className="relative font-sans rounded-t-2xl bg-gray-50 dark:bg-gray-900 
                    [clip-path:inset(0_round_0.75rem_0.75rem_0_0)]"
       >
-              <MasonryScroll />
-
         {/* Tabs (Sticky on Mobile) */}
         <div className="block lg:hidden sticky top-0 z-20 bg-white dark:bg-gray-800">
           {/* Business Header Bar */}
@@ -91,7 +91,7 @@ const handleTabClick = (tab: string) => {
               <h2 className="text-lg text-white font-regular">Wriver</h2>
             </div>
             <div className="bg-white dark:bg-white dark:bg-gray-700 p-2 rounded-3xl">
-              <Share2 className="w-5 h-5 text-blue-900 dark:text-blue-800  cursor-pointer" />
+              <Pencil className="w-5 h-5 text-blue-900 dark:text-blue-800  cursor-pointer" />
             </div>
           </div>
 
@@ -121,7 +121,7 @@ const handleTabClick = (tab: string) => {
         {/* Sections */}
         <div className="w-full lg:w-fit space-y-2">
           <div id="About" ref={sectionRefs.About}>
-            <AboutMobile />
+            <EditBusiness />
           </div>
           <BusinessTile />
           <div id="Gallery" ref={sectionRefs.Gallery}>
@@ -135,7 +135,6 @@ const handleTabClick = (tab: string) => {
           </div>
         </div>
 
-        <AskBusiness />
         <BottomBar />
       </div>
     </section>
