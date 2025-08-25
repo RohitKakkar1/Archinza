@@ -22,6 +22,7 @@ import DeltaFaucet from './components/DeltaFaucet.tsx';
 import ShareSection from './components/ShareSection.tsx';
 import NoPhotos from './components/nophotos.tsx';
 import Wriver from './components/Wriver.tsx';
+import DeltaFaucet2 from './components/DeltaFaucet2.tsx';
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
             <Route path="/delta-faucets" element={<DeltaFaucet />} />
                         <Route path="/wriver" element={<Wriver />} />
                                     <Route path="/no-photos" element={<NoPhotos />} />
+            <Route path="/delta-faucets-2" element={<DeltaFaucet2 />} />
 
 
 
