@@ -17,7 +17,10 @@ import ScrollToTop from './components/scrollTop.tsx';
 import FAQ from './components/FAQ.tsx';
 import Footer from './components/Footer.tsx';
 import Businessview from './components/Business_View.tsx';
+import Chirmee from './components/Chirmee.tsx';
+import DeltaFaucet from './components/DeltaFaucet.tsx';
 import ShareSection from './components/ShareSection.tsx';
+import Wriver from './components/Wriver.tsx';
 
 
 function App() {
@@ -72,7 +75,11 @@ function App() {
             <Route path="/personal" element={<Personal />} />
 
             <Route path="/businessview" element={<Businessview />} />
-            
+            <Route path="/chirmee" element={<Chirmee />} />
+            <Route path="/delta-faucets" element={<DeltaFaucet />} />
+                        <Route path="/wriver" element={<Wriver />} />
+
+
           </Routes>
         </div>
       </Router>
