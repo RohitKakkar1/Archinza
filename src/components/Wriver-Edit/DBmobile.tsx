@@ -12,6 +12,7 @@ import BusinessTile from "./BusinessTile";
 import BottomBar from "./BottomBar";
 import { Pencil } from "lucide-react";
 import EditBusiness from "./EditBusiness";
+import BusinessStatus from "./BusinessStatus";
 
 
 export default function DBMobile() {
@@ -120,6 +121,8 @@ const handleTabClick = (tab: string) => {
 
         {/* Sections */}
         <div className="w-full lg:w-fit space-y-2">
+
+          <BusinessStatus />
           <div id="About" ref={sectionRefs.About}>
             <EditBusiness />
           </div>

@@ -84,7 +84,7 @@ const AskBusiness = () => {
                 className={`px-3 py-2 rounded-full text-sm transition ${
                   open
                     ? "bg-orange-500 text-white hover:bg-orange-600 whitespace-normal break-words text-left"
-                    : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 shrink-0"
+                    : "bg-orange-500 dark:bg-gray-700 text-white dark:text-gray-200 shrink-0"
                 }`}
               >
                 {q}

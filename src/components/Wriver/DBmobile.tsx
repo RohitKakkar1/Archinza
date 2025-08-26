@@ -9,7 +9,6 @@ import Contact from "./Contact";
 import MasonryScroll from "./MasonaryScroll";
 import { Share2 } from "lucide-react";
 import BusinessTile from "./BusinessTile";
-import BottomBar from "./BottomBar";
 import AskBusiness from "./AskBusiness";
 
 export default function DBMobile() {
@@ -72,6 +71,7 @@ const handleTabClick = (tab: string) => {
       <div
         className="relative font-sans rounded-t-2xl bg-gray-50 dark:bg-gray-900 
                    [clip-path:inset(0_round_0.75rem_0.75rem_0_0)]"
+        
       >
               <MasonryScroll />
 
@@ -120,6 +120,7 @@ const handleTabClick = (tab: string) => {
 
         {/* Sections */}
         <div className="w-full lg:w-fit space-y-2">
+          
           <div id="About" ref={sectionRefs.About}>
             <AboutMobile />
           </div>
@@ -136,7 +137,6 @@ const handleTabClick = (tab: string) => {
         </div>
 
         <AskBusiness />
-        <BottomBar />
       </div>
     </section>
   );

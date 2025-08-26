@@ -1,6 +1,12 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ChevronLeft } from "lucide-react";
+
 
 export default function MasonryScroll() {
+  const navigate = useNavigate();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const images = [
     "/BusinessView/Wriver/1.jpg",
     "/BusinessView/Wriver/2.jpg",
@@ -21,7 +27,7 @@ export default function MasonryScroll() {
   const generateColumns = () => {
     const cols: { type: string; imgs: string[] }[] = [];
     let i = 0;
-    const cycle = ["C", "A", "B"]; // fixed order
+    const cycle = ["C", "A", "B"];
 
     while (i < images.length) {
       for (let offset = 0; offset < cycle.length && i < images.length; offset++) {
@@ -34,7 +40,7 @@ export default function MasonryScroll() {
           cols.push({ type, imgs: [images[i], images[i + 1], images[i + 2]] });
           i += 3;
         } else {
-          cols.push({ type: "A", imgs: [images[i]] }); // fallback
+          cols.push({ type: "A", imgs: [images[i]] });
           i++;
         }
       }
@@ -43,89 +49,101 @@ export default function MasonryScroll() {
   };
 
   const columns = generateColumns();
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      ref={scrollRef}
-      className="w-full overflow-x-auto p-2 bg-white dark:bg-gray-900 scrollbar-hide"
-    >
-      <div className="flex h-[320px] gap-2">
-        {columns.map((col, idx) => {
-          if (col.type === "A") {
-            return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "35%" }}
-                />
-                {col.imgs[1] && (
-                  <img
-                    src={col.imgs[1]}
-                    className="w-full object-cover rounded-xl"
-                    style={{ height: "65%" }}
-                  />
-                )}
-              </div>
-            );
-          }
+    <div className="relative">
+      {/* Back to Edit Button */}
+            <button
+        onClick={() => navigate("/wriver-edit")}
+        className="absolute top-4 left-4 z-30 bg-white/90 text-gray-900 px-4 py-2 rounded-full shadow-md text-base font-medium flex items-center gap-2 hover:bg-white/80 transition"
+      >
+        <ChevronLeft className="w-6 h-6" />
+        Edit 
+      </button>
 
-          if (col.type === "B") {
-            return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "65%" }}
-                />
-                {col.imgs[1] && (
+
+      {/* Masonry Scroll Section */}
+      <div
+        ref={scrollRef}
+        className="w-full overflow-x-auto p-2 bg-white dark:bg-gray-900 scrollbar-hide"
+      >
+        <div className="flex h-[320px] gap-2">
+          {columns.map((col, idx) => {
+            if (col.type === "A") {
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col gap-2 flex-shrink-0"
+                  style={{ width: "calc(100vw / 3.8)" }}
+                >
                   <img
-                    src={col.imgs[1]}
+                    src={col.imgs[0]}
                     className="w-full object-cover rounded-xl"
                     style={{ height: "35%" }}
                   />
-                )}
-              </div>
-            );
-          }
-
-          if (col.type === "C") {
-            return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 2)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "50%" }}
-                />
-                <div className="flex h-[50%]">
-                  <img
-                    src={col.imgs[1]}
-                    className="w-1/2 object-cover rounded-xl pr-1"
-                  />
-                  <img
-                    src={col.imgs[2]}
-                    className="w-1/2 object-cover rounded-xl pl-1"
-                  />
+                  {col.imgs[1] && (
+                    <img
+                      src={col.imgs[1]}
+                      className="w-full object-cover rounded-xl"
+                      style={{ height: "65%" }}
+                    />
+                  )}
                 </div>
-              </div>
-            );
-          }
+              );
+            }
 
-          return null;
-        })}
+            if (col.type === "B") {
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col gap-2 flex-shrink-0"
+                  style={{ width: "calc(100vw / 3.8)" }}
+                >
+                  <img
+                    src={col.imgs[0]}
+                    className="w-full object-cover rounded-xl"
+                    style={{ height: "65%" }}
+                  />
+                  {col.imgs[1] && (
+                    <img
+                      src={col.imgs[1]}
+                      className="w-full object-cover rounded-xl"
+                      style={{ height: "35%" }}
+                    />
+                  )}
+                </div>
+              );
+            }
+
+            if (col.type === "C") {
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col gap-2 flex-shrink-0"
+                  style={{ width: "calc(100vw / 2)" }}
+                >
+                  <img
+                    src={col.imgs[0]}
+                    className="w-full object-cover rounded-xl"
+                    style={{ height: "50%" }}
+                  />
+                  <div className="flex h-[50%]">
+                    <img
+                      src={col.imgs[1]}
+                      className="w-1/2 object-cover rounded-xl pr-1"
+                    />
+                    <img
+                      src={col.imgs[2]}
+                      className="w-1/2 object-cover rounded-xl pl-1"
+                    />
+                  </div>
+                </div>
+              );
+            }
+
+            return null;
+          })}
+        </div>
       </div>
     </div>
   );
