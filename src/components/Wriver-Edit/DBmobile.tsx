@@ -106,7 +106,7 @@ const handleTabClick = (tab: string) => {
               <button
                 key={tab}
                 onClick={() => handleTabClick(tab)}
-                className={`px-5 py-2 rounded-full border text-sm font-medium transition 
+                className={`px-4 py-2 rounded-full border text-sm font-medium transition 
                   ${
                     active === tab
                       ? "bg-orange-500 dark:bg-orange-700 text-white"

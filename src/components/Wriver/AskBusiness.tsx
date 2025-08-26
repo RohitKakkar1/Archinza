@@ -41,7 +41,7 @@ const AskBusiness = () => {
   className={`fixed left-0 right-0 z-50 transition-transform duration-500 ${
     open
       ? "top-[20vh] bottom-0 translate-y-0" // opens to 80vh
-      : "translate-y-[calc(100%-5rem)] bottom-5" // closed state
+      : "translate-y-[calc(100%-5rem)] bottom-0" // closed state
   }`}
 >
     
@@ -59,14 +59,18 @@ const AskBusiness = () => {
   )}
 
   {/* Bottom sheet content */}
-  <div className="bg-white dark:bg-gray-900 rounded-t-3xl p-4 shadow-xl relative border-t-2  h-full overflow-y-auto">
+  <div className=" flex flex-col gap-2 bg-white dark:bg-gray-900 rounded-t-3xl px-4 py-2 shadow-xl relative border-t-2  h-full overflow-y-auto">
     {/* Header (always clickable to open) */}
-    <h2
+    {/* <h2
       className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-3 cursor-pointer"
       onClick={() => setOpen(true)}
     >
       Ask Wriver Anything
-    </h2>
+    </h2> */}
+<div className="h-4 w-full flex items-center justify-center"       onClick={() => setOpen(true)}
+>
+  <div className="h-1 w-8 rounded-xl bg-gray-500"></div>
+</div>
 
 
           {/* Questions */}
