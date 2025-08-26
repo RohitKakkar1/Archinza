@@ -59,7 +59,7 @@ const AskBusiness = () => {
   )}
 
   {/* Bottom sheet content */}
-  <div className=" flex flex-col gap-2 bg-white dark:bg-gray-900 rounded-t-3xl px-4 py-2 shadow-xl relative border-t-2  h-full overflow-y-auto">
+  <div className=" flex flex-col gap-2 bg-white dark:bg-gray-900 rounded-t-3xl px-4 py-2 shadow-sm relative border-t-2  h-full overflow-y-auto">
     {/* Header (always clickable to open) */}
     {/* <h2
       className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-3 cursor-pointer"

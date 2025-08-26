@@ -55,7 +55,7 @@ export default function MasonryScroll() {
       {/* Back to Edit Button */}
             <button
         onClick={() => navigate("/wriver-edit")}
-        className="absolute top-4 left-4 z-30 bg-white/90 text-gray-900 px-4 py-2 rounded-full shadow-md text-base font-medium flex items-center gap-2 hover:bg-white/80 transition"
+        className="absolute pl-1 pr-3 py-2 h- top-4 left-4 z-30 bg-white/90 text-gray-900 rounded-full shadow-md text-base font-medium flex items-center  hover:bg-white/80 transition"
       >
         <ChevronLeft className="w-6 h-6" />
         Edit 
