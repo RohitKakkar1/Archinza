@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Eye, ArrowUpCircle } from "lucide-react";
+import { Eye, ArrowUpCircle, Pencil } from "lucide-react";
 
 export default function BottomBar() {
   const navigate = useNavigate();
@@ -14,11 +14,11 @@ export default function BottomBar() {
 
       {/* Right Button */}
       <button
-        onClick={() => navigate("/wriver-preview")}
+        onClick={() => navigate("/wriver-edit")}
         className="flex-1 flex items-center gap-2 border border-gray-300 justify-center bg-white text-black px-4 py-2 rounded-full shadow-md text-sm font-medium hover:bg-gray-100 transition"
       >
-        <Eye className="w-4 h-4" />
-        Preview Page
+        <Pencil className="w-4 h-4" />
+        Edit Page
       </button>
     </div>
   );

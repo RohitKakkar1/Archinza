@@ -24,6 +24,7 @@ import NoPhotos from './components/nophotos.tsx';
 import Wriver from './components/Wriver.tsx';
 import DeltaFaucet2 from './components/DeltaFaucet2.tsx';
 import Wriver_Edit from './components/Wriver-Edit.tsx';
+import Wriver_Preview from './components/Wriver-Preview.tsx';
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
                                     <Route path="/no-photos" element={<NoPhotos />} />
             <Route path="/delta-faucets-2" element={<DeltaFaucet2 />} />
             <Route path="/wriver-edit" element={<Wriver_Edit />} />
+            <Route path="/wriver-preview" element={<Wriver_Preview />} />
 
 
 
