@@ -63,7 +63,9 @@ export default function MasonryScroll_Edit() {
                     src={col.imgs[0]}
                     className="w-full h-full object-cover rounded-xl"
                   />
-
+                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                    <Pencil className="w-4 h-4 text-gray-800" />
+                  </button>
                 </div>
                 {col.imgs[1] && (
                   <div className="relative" style={{ height: "65%" }}>
@@ -71,7 +73,9 @@ export default function MasonryScroll_Edit() {
                       src={col.imgs[1]}
                       className="w-full h-full object-cover rounded-xl"
                     />
-
+                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                      <Pencil className="w-4 h-4 text-gray-800" />
+                    </button>
                   </div>
                 )}
               </div>
@@ -90,6 +94,9 @@ export default function MasonryScroll_Edit() {
                     src={col.imgs[0]}
                     className="w-full h-full object-cover rounded-xl"
                   />
+                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                    <Pencil className="w-4 h-4 text-gray-800" />
+                  </button>
                 </div>
                 {col.imgs[1] && (
                   <div className="relative" style={{ height: "35%" }}>
@@ -97,7 +104,9 @@ export default function MasonryScroll_Edit() {
                       src={col.imgs[1]}
                       className="w-full h-full object-cover rounded-xl"
                     />
-
+                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                      <Pencil className="w-4 h-4 text-gray-800" />
+                    </button>
                   </div>
                 )}
               </div>
@@ -116,7 +125,9 @@ export default function MasonryScroll_Edit() {
                     src={col.imgs[0]}
                     className="w-full h-full object-cover rounded-xl"
                   />
-
+                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                    <Pencil className="w-4 h-4 text-gray-800" />
+                  </button>
                 </div>
                 <div className="flex h-[50%]">
                   <div className="relative w-1/2 pr-1">
@@ -124,14 +135,18 @@ export default function MasonryScroll_Edit() {
                       src={col.imgs[1]}
                       className="w-full h-full object-cover rounded-xl"
                     />
-
+                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                      <Pencil className="w-4 h-4 text-gray-800" />
+                    </button>
                   </div>
                   <div className="relative w-1/2 pl-1">
                     <img
                       src={col.imgs[2]}
                       className="w-full h-full object-cover rounded-xl"
                     />
-
+                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
+                      <Pencil className="w-4 h-4 text-gray-800" />
+                    </button>
                   </div>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import { MapPin, Globe, Calendar, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, StarIcon, FireIcon } from '@heroicons/react/24/solid';
 import ThirdCard from "./ThirdCard";
+import { ChevronLeft } from "lucide-react";
 
 const items = [
   {
@@ -50,6 +51,8 @@ const AboutMobile: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+    const [open, setOpen] = useState(false);
+
   return (
     <div className="flex flex-col w-full p-4 gap-4 text-gray-900 dark:text-gray-100">
       {/* Card 1 */}
@@ -57,10 +60,67 @@ const AboutMobile: React.FC = () => {
         <div className="h-auto  rounded-lg   flex flex-col transition-colors duration-300">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold">About</h2>
-            <button className="text-blue-600 dark:text-blue-400 text-sm font-semibold hover:underline">
-              View More
-            </button>
+                  <button
+        onClick={() => setOpen(true)}
+        className="text-blue-600 dark:text-blue-400 text-sm font-semibold hover:underline"
+      >
+        View More
+      </button>
+      </div>
+
+      {/* Bottom Sheet */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40">
+          <div className="w-full max-w-md rounded-t-2xl bg-white dark:bg-gray-900 shadow-lg transition-transform animate-slide-up">
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b">
+              <button
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-1 rounded-lg px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <ChevronLeft className="h-5 w-5" />
+                <span className="text-sm font-medium">Back</span>
+              </button>
+              <h2 className="text-base font-semibold">About</h2>
+              <div className="w-8" /> {/* Spacer for centering */}
+            </div>
+
+            {/* Content */}
+            <div className="p-4 max-h-[70vh] overflow-y-auto text-sm text-gray-700 dark:text-gray-300">
+              <div className="">
+                      <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+                    <p>
+                      Add your about content here. You can put paragraphs, images, or
+                      even other components.
+                    </p>
+              </div>
+            </div>
           </div>
+        </div>
+      )}
 
           <div className="flex flex-col gap-4">
             <p className="text-sm mt-2 text-gray-700 dark:text-gray-300">

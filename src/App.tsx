@@ -25,6 +25,8 @@ import Wriver from './components/Wriver.tsx';
 import DeltaFaucet2 from './components/DeltaFaucet2.tsx';
 import Wriver_Edit from './components/Wriver-Edit.tsx';
 import Wriver_Preview from './components/Wriver-Preview.tsx';
+import SubscriptionPage from './components/Upgrade/upgrade-plan.tsx';
+import Thank_You from './components/Upgrade/Thank_You.tsx';
 
 function App() {
   return (
@@ -86,6 +88,8 @@ function App() {
             <Route path="/wriver-edit" element={<Wriver_Edit />} />
             <Route path="/wriver-preview" element={<Wriver_Preview />} />
 
+            <Route path="/upgrade" element={<SubscriptionPage />} />
+            <Route path="/upgrade-thank-you" element={<Thank_You />} />
 
 
           </Routes>

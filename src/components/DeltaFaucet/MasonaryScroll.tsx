@@ -29,10 +29,7 @@ export default function ScrollSlider() {
         </div>
       </div>
 
-      {/* View Gallery button - stays fixed in bottom-right of this component */}
-      <button className="absolute font-sans bottom-3 right-3 bg-white/50 text-gray-800 px-3 py-2 rounded-lg border shadow-sm text-sm hover:bg-white hover:shadow-md transition">
-        View Gallery
-      </button>
+
     </div>
   );
 }
