@@ -144,9 +144,9 @@ export default function ThankYou(): JSX.Element {
         <div className="mt-6">
           <button
             onClick={() => navigate("/wriver-edit")}
-            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-full transition"
+            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
           >
-            Thanks
+            Continue to Edit
           </button>
         </div>
       </div>

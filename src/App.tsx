@@ -27,6 +27,7 @@ import Wriver_Edit from './components/Wriver-Edit.tsx';
 import Wriver_Preview from './components/Wriver-Preview.tsx';
 import SubscriptionPage from './components/Upgrade/upgrade-plan.tsx';
 import Thank_You from './components/Upgrade/Thank_You.tsx';
+import Verify from './components/Verify/verify.tsx';
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
 
             <Route path="/upgrade" element={<SubscriptionPage />} />
             <Route path="/upgrade-thank-you" element={<Thank_You />} />
+            <Route path="/verify" element={<Verify />} />
 
 
           </Routes>

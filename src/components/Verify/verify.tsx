@@ -7,11 +7,9 @@ import illustration from '/Business/pricing.png';
 import { Check, X } from "lucide-react";
 import { Info } from "lucide-react";
 
-
-
-export default function SubscriptionPage() {
+export default function Verify() {
   const navigate = useNavigate();
-  const [activePlan, setActivePlan] = useState("supporter"); // default Starter
+  const [activePlan, setActivePlan] = useState("starter"); // default Starter
 
   return (
     <div className="max-w-md mx-auto bg-white text-gray-900 dark:bg-black dark:text-white min-h-screen pb-20 transition-colors">
@@ -24,22 +22,15 @@ export default function SubscriptionPage() {
           <ChevronLeft className="w-8 h-8" />
         </button>
         <h2 className="text-xl font-sans font-bold">
-          Upgrade your Plan
+          Choose your Plan
         </h2>
       </div>
 
+
+
+
       {/* Tabs */}
       <div className="flex mx-5 mt-6 bg-gray-200 dark:bg-gray-800 rounded-full p-1">
-                <button
-          onClick={() => setActivePlan("supporter")}
-          className={`flex-1 py-2 rounded-full font-medium ${
-            activePlan === "supporter"
-              ? "bg-white dark:bg-gray-900 text-black dark:text-white"
-              : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-          }`}
-        >
-          Supporter
-        </button>
         <button
           onClick={() => setActivePlan("starter")}
           className={`flex-1 py-2 rounded-full font-medium ${
@@ -50,15 +41,23 @@ export default function SubscriptionPage() {
         >
           Starter
         </button>
+                <button
+          onClick={() => setActivePlan("supporter")}
+          className={`flex-1 py-2 rounded-full font-medium ${
+            activePlan === "supporter"
+              ? "bg-white dark:bg-gray-900 text-black dark:text-white"
+              : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+          }`}
+        >
+          Supporter
+        </button>
+
       </div>
 
       {/* Plan Content */}
       <div className="mt-6 px-5">
         {activePlan === "starter" && (
         <div>
-                    <h2 className="flex flex-col w-full items-center text-lg font-medium mb-3 text-gray-900 dark:text-gray-100">
-            Your work deserves to be <span className="text-orange-600 dark:text-blue-400">discovered.</span>
-          </h2>
                     <div className="w-full lg:w-[45%] flex justify-center lg:justify-start mb-8 lg:mb-0">
           <img
             src={illustration}
@@ -66,17 +65,14 @@ export default function SubscriptionPage() {
             className="max-w-md w-[300px]"
           />
         </div>
-        
           <div className="flex items-center">
-          <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">
-            21 <span className="text-blue-600 dark:text-blue-400">Days remaining</span>
-            <span title="Your current plan expires in 21 days. Upgrade to keep your profile active.">
-            </span>
-            </h2>
+                <h2 className="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100 flex items-center gap-2">
+Just Getting <span className="text-blue-600 dark:text-blue-400">Started?</span>
+</h2>
                         </div>
 
                 <p className="text-gray-700 dark:text-gray-300 mb-3">
-                Your Starter plan is expiring soon. Upgrade to keep your profile live and gain more visibility.
+                Get onboarded for free today and enjoy 3 months of full-feature access post-launch.
                 </p>
 
 
@@ -110,12 +106,8 @@ export default function SubscriptionPage() {
         )}
 
         {activePlan === "supporter" && (
-        <div className="">
-        <h2 className="flex flex-col w-full items-center text-lg font-medium mb-3 text-gray-900 dark:text-gray-100">
-            Your work deserves to be <span className="text-orange-600 dark:text-blue-400">discovered.</span>
-          </h2>
+        <div>
                     {/* Image on top (mobile), left (desktop) */}
-        
         <div className="w-full lg:w-[45%] flex justify-center lg:justify-start mb-8 lg:mb-0">
           <img
             src={illustration}
@@ -125,12 +117,12 @@ export default function SubscriptionPage() {
         </div>
                     {/* Text Section */}
         <div className="w-full lg:w-[45%] text-left lg:text-left">
-          
-          <h2 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">
-            Become a <span className="text-blue-600 dark:text-blue-400">‘Founding User’</span>
+          <h2 className="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100">
+            Be a <span className="text-blue-600 dark:text-blue-400">‘Founding User’</span>
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-3">
-            Unlock exclusive Beta access to Archinza and enjoy all benefits when the full product launches.
+                        Unlock exclusive Beta access to Archinza and enjoy all benefits when the full product launches.
+
           </p>
 
                 <div className="bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-4 shadow-s transition-all">
@@ -170,15 +162,15 @@ export default function SubscriptionPage() {
           <button 
             onClick={() => navigate("/wriver-edit")}
 
-          className="w-full bg-black text-white dark:bg-white dark:text-black py-3 rounded-full font-medium hover:opacity-80 transition">
-            Continue for Free
+          className="w-full bg-blue-600 text-white  dark:text-black py-3 rounded-full font-medium hover:opacity-80 transition">
+            FREE for limited period <span className="line-through text-base">(Rs. 10000)</span>
           </button>
         ) : (
           <button 
         onClick={() => navigate("/upgrade-thank-you")}
           className="w-full bg-blue-600 text-white py-3 rounded-full font-medium hover:bg-blue-700 transition"
           >
-            Buy Now at <span className="line-through text-sm">₹15,000</span> ₹999
+            Buy Now at <span className="line-through text-base">₹15,000</span> ₹999
           </button>
         )}
       </div>
