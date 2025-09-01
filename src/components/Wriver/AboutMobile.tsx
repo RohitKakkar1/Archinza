@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, StarIcon, FireIcon } from '@heroicons/react/24/solid';
 import ThirdCard from "./ThirdCard";
 import { ChevronLeft } from "lucide-react";
+import ZohoForm from "../ZohoForm";
 
 const items = [
   {
@@ -220,6 +221,8 @@ const AboutMobile: React.FC = () => {
         <div className="pt-4">
              <ThirdCard />
              </div>
+
+
       </div>
     </div>
   );

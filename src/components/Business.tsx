@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import FeaturesBus from "./features";
 import BusinessPricing from "./business/businessPricing";
 import Header from "./Header";
+import ZohoForm from "./ZohoForm";
 
 const Business = () => {
   return (
@@ -18,8 +19,11 @@ const Business = () => {
 
     
     <Bus_Offering />
+
     <NetworkSection />
     <SectionToggle />
+                       <ZohoForm />
+
     <section id="who-is-it-for"><WhoIsItFor /></section>
           <section id="features"><Features /></section>
                     
