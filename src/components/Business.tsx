@@ -22,7 +22,6 @@ const Business = () => {
 
     <NetworkSection />
     <SectionToggle />
-                       <ZohoForm />
 
     <section id="who-is-it-for"><WhoIsItFor /></section>
           <section id="features"><Features /></section>
@@ -33,7 +32,7 @@ const Business = () => {
           <FeaturesBus />
           <br /><br />
                                   <section> <BusinessPricing /> </section>
-
+<ZohoForm />
           <Footer />
 
 
