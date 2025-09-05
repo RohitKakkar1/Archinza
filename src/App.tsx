@@ -29,6 +29,8 @@ import SubscriptionPage from './components/Upgrade/upgrade-plan.tsx';
 import Thank_You from './components/Upgrade/Thank_You.tsx';
 import Verify from './components/Verify/verify.tsx';
 import ZohoForm from './components/ZohoForm.tsx';
+import ZohoFormEmbed from './components/ZohoFormF.tsx';
+import ZohoFormBusinesses from './components/ZohoFormBusiness.tsx';
 
 function App() {
   return (
@@ -94,6 +96,8 @@ function App() {
             <Route path="/upgrade-thank-you" element={<Thank_You />} />
             <Route path="/verify" element={<Verify />} />
             <Route path="/feedback" element={<ZohoForm />} />
+            <Route path="/feedback-w" element={<ZohoFormEmbed />} />
+            <Route path="/feedback-b" element={<ZohoFormBusinesses />} />
 
 
           </Routes>
