@@ -3,7 +3,8 @@ import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Benefit_tiles from "./Supporter_Benefit_tiles";
 import { div } from "framer-motion/client";
-import illustration from '/Business/pricing.png';
+import illustration1 from '/Business/1.png';
+import illustration2 from '/Business/2.png';
 import { Check, X } from "lucide-react";
 import { Info } from "lucide-react";
 
@@ -61,9 +62,9 @@ export default function SubscriptionPage() {
           </h2>
                     <div className="w-full lg:w-[45%] flex justify-center lg:justify-start mb-8 lg:mb-0">
           <img
-            src={illustration}
+            src={illustration1}
             alt="Detailed Plans Illustration"
-            className="max-w-md w-[300px]"
+            className="max-w-md w-[360px]"
           />
         </div>
         
@@ -118,9 +119,9 @@ export default function SubscriptionPage() {
         
         <div className="w-full lg:w-[45%] flex justify-center lg:justify-start mb-8 lg:mb-0">
           <img
-            src={illustration}
+            src={illustration2}
             alt="Detailed Plans Illustration"
-            className="max-w-md w-[300px]"
+            className="max-w-md w-[360px]"
           />
         </div>
                     {/* Text Section */}

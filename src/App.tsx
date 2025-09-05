@@ -17,7 +17,7 @@ import ScrollToTop from './components/scrollTop.tsx';
 import FAQ from './components/FAQ.tsx';
 import Footer from './components/Footer.tsx';
 import Businessview from './components/Business_View.tsx';
-import Chirmee from './components/Chirmee.tsx';
+import MobileInsights from './components/Chirmee.tsx';
 import DeltaFaucet from './components/DeltaFaucet.tsx';
 import ShareSection from './components/ShareSection.tsx';
 import NoPhotos from './components/nophotos.tsx';
@@ -28,6 +28,7 @@ import Wriver_Preview from './components/Wriver-Preview.tsx';
 import SubscriptionPage from './components/Upgrade/upgrade-plan.tsx';
 import Thank_You from './components/Upgrade/Thank_You.tsx';
 import Verify from './components/Verify/verify.tsx';
+import ZohoForm from './components/ZohoForm.tsx';
 
 function App() {
   return (
@@ -81,7 +82,7 @@ function App() {
             <Route path="/personal" element={<Personal />} />
 
             <Route path="/businessview" element={<Businessview />} />
-            <Route path="/chirmee" element={<Chirmee />} />
+            <Route path="/chirmee" element={<MobileInsights />} />
             <Route path="/delta-faucets" element={<DeltaFaucet />} />
                         <Route path="/wriver" element={<Wriver />} />
                                     <Route path="/no-photos" element={<NoPhotos />} />
@@ -92,6 +93,7 @@ function App() {
             <Route path="/upgrade" element={<SubscriptionPage />} />
             <Route path="/upgrade-thank-you" element={<Thank_You />} />
             <Route path="/verify" element={<Verify />} />
+            <Route path="/feedback" element={<ZohoForm />} />
 
 
           </Routes>

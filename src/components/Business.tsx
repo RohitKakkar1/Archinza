@@ -32,7 +32,6 @@ const Business = () => {
           <FeaturesBus />
           <br /><br />
                                   <section> <BusinessPricing /> </section>
-<ZohoForm />
           <Footer />
 
 
