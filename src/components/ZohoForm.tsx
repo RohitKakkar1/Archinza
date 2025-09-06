@@ -32,7 +32,11 @@ export default function ZohoForm() {
   }, []);
 
   return (
-    <div id="zohoSupportWebToCase" align="center">
+    <div
+      id="zohoSupportWebToCase"
+      align="center"
+      className="dark:bg-gray-900 dark:text-gray-100 p-4 rounded-lg"
+    >
       <form
         name="zsWebToCase_208602000000300007"
         id="zsWebToCase_208602000000300007"
@@ -41,6 +45,7 @@ export default function ZohoForm() {
         onSubmit={() => window.zsValidateMandatoryFields?.()}
         encType="multipart/form-data"
         style={{ width: "100%", maxWidth: "700px", margin: "0 auto" }}
+        className="dark:text-gray-100"
       >
         {/* Hidden fields */}
         <input
@@ -76,9 +81,8 @@ export default function ZohoForm() {
             style={{ borderCollapse: "separate", width: "100%" }}
           >
             <tbody>
-
               <tr>
-                <td className="zsFontClass" width="25%">
+                <td className="zsFontClass dark:text-gray-200" width="25%">
                   Name
                 </td>
                 <td width="75%">
@@ -87,62 +91,42 @@ export default function ZohoForm() {
                     maxLength="120"
                     name="Contact Name"
                     placeholder="Enter your name"
-                    style={{
-                      width: "100%",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "6px 10px",
-                    }}
+                    className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
                   />
                 </td>
               </tr>
               <tr>
-                <td className="zsFontClass">Phone</td>
+                <td className="zsFontClass dark:text-gray-200">Phone</td>
                 <td width="75%">
                   <input
                     type="text"
                     maxLength="120"
                     name="Phone"
                     placeholder="Enter your phone number"
-                    style={{
-                      width: "100%",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "6px 10px",
-                    }}
+                    className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
                   />
                 </td>
               </tr>
               <tr>
-                <td className="zsFontClass">Email</td>
+                <td className="zsFontClass dark:text-gray-200">Email</td>
                 <td width="75%">
                   <input
                     type="text"
                     maxLength="120"
                     name="Email"
                     placeholder="Enter your email"
-                    style={{
-                      width: "100%",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "6px 10px",
-                    }}
+                    className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
                   />
                 </td>
               </tr>
               <tr>
-                <td className="zsFontClass">Pick a topic</td>
+                <td className="zsFontClass dark:text-gray-200">Pick a topic</td>
                 <td>
                   <select
                     name="Classification"
                     id="Classification"
                     onChange={(e) => window.setDependent?.(e.target, false)}
-                    style={{
-                      width: "100%",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "6px 10px",
-                    }}
+                    className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
                   >
                     <option value="">-None-</option>
                     <option value="Response Quality/ Accuracy on Bot">
@@ -159,37 +143,25 @@ export default function ZohoForm() {
                 </td>
               </tr>
               <tr>
-                <td className="zsFontClass">Subject</td>
+                <td className="zsFontClass dark:text-gray-200">Subject</td>
                 <td width="75%">
                   <input
                     type="text"
                     maxLength="255"
                     name="Subject"
                     placeholder="Enter the subject"
-                    style={{
-                      width: "100%",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "6px 10px",
-                    }}
+                    className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
                   />
                 </td>
               </tr>
               <tr>
-                <td className="zsFontClass">Description</td>
+                <td className="zsFontClass dark:text-gray-200">Description</td>
                 <td width="75%">
                   <textarea
                     name="Description"
                     maxLength="3000"
                     placeholder="Enter a detailed description"
-                    style={{
-                      width: "100%",
-                      minHeight: "96px",
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "8px 10px",
-                      resize: "vertical",
-                    }}
+                    className="w-full min-h-[96px] border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100 resize-y"
                   />
                 </td>
               </tr>
@@ -198,14 +170,7 @@ export default function ZohoForm() {
                   <input
                     type="submit"
                     value="Submit"
-                    style={{
-                      background: "#014FE0",
-                      color: "#fff",
-                      border: "none",
-                      borderRadius: "24px",
-                      padding: "10px 20px",
-                      cursor: "pointer",
-                    }}
+                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-2 cursor-pointer"
                   />
                 </td>
               </tr>
@@ -228,12 +193,7 @@ export default function ZohoForm() {
               name="Contact Name"
               maxLength="120"
               placeholder="Enter your name"
-              style={{
-                width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-              }}
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
             />
 
             <input
@@ -241,12 +201,7 @@ export default function ZohoForm() {
               name="Phone"
               maxLength="120"
               placeholder="Enter your phone number"
-              style={{
-                width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-              }}
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
             />
 
             <input
@@ -254,24 +209,14 @@ export default function ZohoForm() {
               name="Email"
               maxLength="120"
               placeholder="Enter your email"
-              style={{
-                width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-              }}
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
             />
 
             <select
               name="Classification"
               id="Classification"
               onChange={(e) => window.setDependent?.(e.target, false)}
-              style={{
-                width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-              }}
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
             >
               <option value="">Pick a topic</option>
               <option value="Response Quality/ Accuracy on Bot">
@@ -291,38 +236,19 @@ export default function ZohoForm() {
               name="Subject"
               maxLength="255"
               placeholder="Enter the subject"
-              style={{
-                width: "100%",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-              }}
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100"
             />
 
             <textarea
               name="Description"
               maxLength="3000"
               placeholder="Enter a detailed description"
-              style={{
-                width: "100%",
-                minHeight: "120px",
-                border: "1px solid #ccc",
-                borderRadius: "4px",
-                padding: "10px",
-                resize: "vertical",
-              }}
+              className="w-full min-h-[120px] border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 dark:text-gray-100 resize-y"
             />
 
             <button
               type="submit"
-              style={{
-                background: "#014FE0",
-                color: "#fff",
-                border: "none",
-                borderRadius: "24px",
-                padding: "12px",
-                cursor: "pointer",
-              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-3 cursor-pointer"
             >
               Submit
             </button>
