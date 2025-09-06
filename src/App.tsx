@@ -96,7 +96,7 @@ function App() {
             <Route path="/upgrade-thank-you" element={<Thank_You />} />
             <Route path="/verify" element={<Verify />} />
             <Route path="/feedback" element={<ZohoForm />} />
-            <Route path="/feedback-w" element={<ZohoFormEmbed />} />
+            <Route path="/feedback-bot" element={<ZohoFormEmbed />} />
             <Route path="/feedback-b" element={<ZohoFormBusinesses />} />
 
 

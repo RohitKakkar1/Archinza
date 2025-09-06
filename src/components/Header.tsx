@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Sun, Moon, Menu, X, LogIn } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Link, NavLink } from 'react-router-dom';
+import { MessageSquare } from "lucide-react";
+
 
 const Header: React.FC = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -101,6 +103,18 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
                 </span>
               </button>
             </div>
+
+            {/* Feedback */}
+                  <Link to="/feedback-bot">
+
+                <button
+      className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white"
+    >
+      <MessageSquare size={20} className="text-blue-500" />
+      {/* Show text only on mobile */}
+      <span className="text-sm block md:hidden">Feedback</span>
+    </button>
+    </Link>
           </div>
         )}
 
@@ -170,6 +184,17 @@ className="text-gray-800 dark:text-white hover:text-blue-600 text-lg"
                 <Moon className="w-5 h-5 text-gray-600" />
               )}
             </button>
+
+          {/* Feedback */}
+            <Link to="/feedback-bot" >
+                <button
+      className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white"
+    >
+      <MessageSquare size={20} className="text-blue-500" />
+      {/* Show text only on mobile */}
+      <span className="text-sm block md:hidden">Feedback</span>
+    </button></Link>
+
             <Link to="http://174.138.123.146:9028/login" target="_blank" rel="noopener noreferrer">
               <button className="hover:text-blue-600 dark:text-white">Log-In</button>
             </Link>

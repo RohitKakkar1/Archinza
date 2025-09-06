@@ -1,18 +1,48 @@
-"use client";
-import React from "react";
+import { useEffect, useState } from "react";
 
 export default function ZohoForm() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // run on load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Load external Zoho scripts dynamically
+    const jqueryScript = document.createElement("script");
+    jqueryScript.src =
+      "https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js";
+    jqueryScript.async = true;
+    document.body.appendChild(jqueryScript);
+
+    const zohoScript = document.createElement("script");
+    zohoScript.innerHTML = `
+      // paste Zoho helper functions here if needed (zsValidateMandatoryFields etc.)
+    `;
+    document.body.appendChild(zohoScript);
+
+    return () => {
+      document.body.removeChild(jqueryScript);
+      document.body.removeChild(zohoScript);
+    };
+  }, []);
+
   return (
-    <div className="w-full flex justify-center px-4">
+    <div id="zohoSupportWebToCase" align="center">
       <form
         name="zsWebToCase_208602000000300007"
         id="zsWebToCase_208602000000300007"
         action="https://desk.zoho.in/support/WebToCase"
         method="POST"
+        onSubmit={() => window.zsValidateMandatoryFields?.()}
         encType="multipart/form-data"
-        className="w-full max-w-lg bg-white rounded-xl shadow-md border border-gray-200 p-6 space-y-4"
+        style={{ width: "100%", maxWidth: "700px", margin: "0 auto" }}
       >
-        {/* Hidden Fields */}
+        {/* Hidden fields */}
         <input
           type="hidden"
           name="xnQsjsdp"
@@ -29,7 +59,7 @@ export default function ZohoForm() {
         <input
           type="hidden"
           id="dependent_field_values_Cases"
-          value="{}"
+          value='{"JSON_VALUES":{},"JSON_SELECT_VALUES":{},"JSON_MAP_DEP_LABELS":[]}'
         />
         <input
           type="hidden"
@@ -37,130 +67,267 @@ export default function ZohoForm() {
           value="https://archinza-ai.vercel.app/"
         />
 
-        {/* Heading */}
-        <h2 className="text-xl font-semibold text-gray-900 text-center">
-          Submit a Ticket
-        </h2>
-
-        {/* First Name */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            First Name
-          </label>
-          <input
-            type="text"
-            name="First Name"
-            maxLength={120}
-            className="mt-1 w-full rounded-md border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-          />
-        </div>
-
-        {/* Last Name */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Last Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="Contact Name"
-            maxLength={120}
-            className="mt-1 w-full rounded-md border-l-4 border-red-500 border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-          />
-        </div>
-
-        {/* Email */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Email <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="Email"
-            maxLength={120}
-            className="mt-1 w-full rounded-md border-l-4 border-red-500 border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-          />
-        </div>
-
-        {/* Classification */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Pick a topic
-          </label>
-          <select
-            name="Classification"
-            className="mt-1 w-full rounded-md border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+        {/* Desktop Layout (table) */}
+        {!isMobile && (
+          <table
+            className="zsFormClass"
+            cellSpacing="0"
+            cellPadding="8"
+            style={{ borderCollapse: "separate", width: "100%" }}
           >
-            <option value="">-None-</option>
-            <option value="Response Quality/ Accuracy on Bot">
-              Response Quality/ Accuracy on Bot
-            </option>
-            <option value="Onboarding and Account">
-              Onboarding and Account
-            </option>
-            <option value="Suggested Features to add">
-              Suggested Features to add
-            </option>
-            <option value="Others">Others</option>
-          </select>
-        </div>
+            <tbody>
 
-        {/* Subject */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Subject <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="Subject"
-            maxLength={255}
-            className="mt-1 w-full rounded-md border-l-4 border-red-500 border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-          />
-        </div>
+              <tr>
+                <td className="zsFontClass" width="25%">
+                  Name
+                </td>
+                <td width="75%">
+                  <input
+                    type="text"
+                    maxLength="120"
+                    name="Contact Name"
+                    placeholder="Enter your name"
+                    style={{
+                      width: "100%",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "6px 10px",
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="zsFontClass">Phone</td>
+                <td width="75%">
+                  <input
+                    type="text"
+                    maxLength="120"
+                    name="Phone"
+                    placeholder="Enter your phone number"
+                    style={{
+                      width: "100%",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "6px 10px",
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="zsFontClass">Email</td>
+                <td width="75%">
+                  <input
+                    type="text"
+                    maxLength="120"
+                    name="Email"
+                    placeholder="Enter your email"
+                    style={{
+                      width: "100%",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "6px 10px",
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="zsFontClass">Pick a topic</td>
+                <td>
+                  <select
+                    name="Classification"
+                    id="Classification"
+                    onChange={(e) => window.setDependent?.(e.target, false)}
+                    style={{
+                      width: "100%",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "6px 10px",
+                    }}
+                  >
+                    <option value="">-None-</option>
+                    <option value="Response Quality/ Accuracy on Bot">
+                      Response Quality/ Accuracy on Bot
+                    </option>
+                    <option value="Onboarding and Account">
+                      Onboarding and Account
+                    </option>
+                    <option value="Suggested Features to add">
+                      Suggested Features to add
+                    </option>
+                    <option value="Others">Others</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td className="zsFontClass">Subject</td>
+                <td width="75%">
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Subject"
+                    placeholder="Enter the subject"
+                    style={{
+                      width: "100%",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "6px 10px",
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="zsFontClass">Description</td>
+                <td width="75%">
+                  <textarea
+                    name="Description"
+                    maxLength="3000"
+                    placeholder="Enter a detailed description"
+                    style={{
+                      width: "100%",
+                      minHeight: "96px",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      padding: "8px 10px",
+                      resize: "vertical",
+                    }}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td colSpan="2" align="center">
+                  <input
+                    type="submit"
+                    value="Submit"
+                    style={{
+                      background: "#014FE0",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "24px",
+                      padding: "10px 20px",
+                      cursor: "pointer",
+                    }}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        )}
 
-        {/* Description */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Description
-          </label>
-          <textarea
-            name="Description"
-            maxLength={3000}
-            className="mt-1 w-full rounded-md border-gray-300 bg-gray-50 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-            rows={4}
-          />
-        </div>
-
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            type="submit"
-            className="w-full sm:w-auto rounded-md bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700"
+        {/* Mobile Layout (stacked) */}
+        {isMobile && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              textAlign: "left",
+            }}
           >
-            Submit
-          </button>
-          <button
-            type="reset"
-            className="w-full sm:w-auto rounded-md bg-gray-500 px-4 py-2 text-white text-sm font-medium hover:bg-gray-600"
-          >
-            Reset
-          </button>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-4 text-center text-xs text-gray-500 flex justify-center items-center">
-          <span>Powered by</span>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://zoho.in/desk"
-          >
-            <img
-              src="https://img.zohostatic.in/support/app/images/portalLogo.de847024ebc0131731a3.png"
-              alt="Zoho Desk"
-              className="ml-2 h-4 opacity-70"
+            <input
+              type="text"
+              name="Contact Name"
+              maxLength="120"
+              placeholder="Enter your name"
+              style={{
+                width: "100%",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+              }}
             />
-          </a>
-        </div>
+
+            <input
+              type="text"
+              name="Phone"
+              maxLength="120"
+              placeholder="Enter your phone number"
+              style={{
+                width: "100%",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+              }}
+            />
+
+            <input
+              type="text"
+              name="Email"
+              maxLength="120"
+              placeholder="Enter your email"
+              style={{
+                width: "100%",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+              }}
+            />
+
+            <select
+              name="Classification"
+              id="Classification"
+              onChange={(e) => window.setDependent?.(e.target, false)}
+              style={{
+                width: "100%",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+              }}
+            >
+              <option value="">Pick a topic</option>
+              <option value="Response Quality/ Accuracy on Bot">
+                Response Quality/ Accuracy on Bot
+              </option>
+              <option value="Onboarding and Account">
+                Onboarding and Account
+              </option>
+              <option value="Suggested Features to add">
+                Suggested Features to add
+              </option>
+              <option value="Others">Others</option>
+            </select>
+
+            <input
+              type="text"
+              name="Subject"
+              maxLength="255"
+              placeholder="Enter the subject"
+              style={{
+                width: "100%",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+              }}
+            />
+
+            <textarea
+              name="Description"
+              maxLength="3000"
+              placeholder="Enter a detailed description"
+              style={{
+                width: "100%",
+                minHeight: "120px",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                padding: "10px",
+                resize: "vertical",
+              }}
+            />
+
+            <button
+              type="submit"
+              style={{
+                background: "#014FE0",
+                color: "#fff",
+                border: "none",
+                borderRadius: "24px",
+                padding: "12px",
+                cursor: "pointer",
+              }}
+            >
+              Submit
+            </button>
+          </div>
+        )}
       </form>
     </div>
   );

@@ -1,8 +1,11 @@
 import ZohoForm from "./ZohoForm"
+import Header from "./Header"
 
 export default function FeedbackSection() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-2">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-2">
+                                  <Header />
+
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-6 md:space-y-0 md:space-x-8">
         
         {/* Left Side: Heading & Image */}
