@@ -12,38 +12,39 @@ export default function ZohoForm() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    // Load external Zoho scripts dynamically
-    const jqueryScript = document.createElement("script");
-    jqueryScript.src =
-      "https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js";
-    jqueryScript.async = true;
-    document.body.appendChild(jqueryScript);
+  // Custom submit handler
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // stop normal form submission
 
-    const zohoScript = document.createElement("script");
-    zohoScript.innerHTML = `
-      // paste Zoho helper functions here if needed (zsValidateMandatoryFields etc.)
-    `;
-    document.body.appendChild(zohoScript);
+    const form = e.target;
+    const formData = new FormData(form);
 
-    return () => {
-      document.body.removeChild(jqueryScript);
-      document.body.removeChild(zohoScript);
-    };
-  }, []);
+    try {
+      // Post to Zoho WebToCase
+      await fetch("https://desk.zoho.in/support/WebToCase", {
+        method: "POST",
+        body: formData,
+      });
+
+      // Instantly redirect to your return URL (skips Zoho's "thank you" page)
+      window.location.href = "https://archinza-ai.vercel.app/";
+    } catch (err) {
+      console.error("Zoho form submission failed:", err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <div id="zohoSupportWebToCase" className="zoho-form-container">
       <form
         name="zsWebToCase_208602000000300007"
         id="zsWebToCase_208602000000300007"
-        action="https://desk.zoho.in/support/WebToCase"
         method="POST"
-        onSubmit={() => window.zsValidateMandatoryFields?.()}
         encType="multipart/form-data"
         className="zoho-form"
+        onSubmit={handleSubmit}
       >
-        {/* Hidden fields */}
+        {/* Hidden fields (important for Zoho Desk) */}
         <input
           type="hidden"
           name="xnQsjsdp"
@@ -120,7 +121,6 @@ export default function ZohoForm() {
                   <select
                     name="Classification"
                     id="Classification"
-                    onChange={(e) => window.setDependent?.(e.target, false)}
                     className="form-select"
                   >
                     <option value="">-None-</option>
@@ -175,7 +175,7 @@ export default function ZohoForm() {
           </table>
         )}
 
-        {/* Mobile Layout (stacked) */}
+        {/* Mobile Layout */}
         {isMobile && (
           <div className="mobile-form">
             <input
@@ -205,7 +205,6 @@ export default function ZohoForm() {
             <select
               name="Classification"
               id="Classification"
-              onChange={(e) => window.setDependent?.(e.target, false)}
               className="mobile-select"
             >
               <option value="">Pick a topic</option>
