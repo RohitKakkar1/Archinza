@@ -6,9 +6,9 @@ export default function ToggleView() {
   const [selected, setSelected] = useState<"foryou" | "projects">("foryou");
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className=" flex flex-col items-center w-full">
       {/* Toggle */}
-      <div className="flex bg-gray-200 rounded-full p-1 w-64 my-4">
+      <div className=" flex bg-gray-200 rounded-full p-1 w-64 my-4">
         <button
           onClick={() => setSelected("foryou")}
           className={`flex-1 px-4 py-2 rounded-full text-sm font-medium transition ${

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SearchBar from "./search_bar";
+import BusinessTabs from "./BusinessTabs";
 
 const projectCategories = [
   { name: "Ongoing Projects", icon: "📂" },
@@ -66,26 +67,9 @@ export default function YourProjects() {
           isExpanded ? "h-[100%]" : "h-[65%]"
         }`}
       >
-        {/* Drag Handle */}
-        <div
-          className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-6 cursor-pointer"
-          onClick={() => setIsExpanded(!isExpanded)}
-        />
 
         {/* Categories */}
-        <div className="grid grid-cols-3 gap-6">
-          {projectCategories.map((c, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center gap-2"
-            >
-              <div className="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-xl text-2xl shadow-sm">
-                {c.icon}
-              </div>
-              <p className="text-xs font-medium text-gray-700">{c.name}</p>
-            </div>
-          ))}
-        </div>
+        <BusinessTabs />
       </div>
     </div>
   );

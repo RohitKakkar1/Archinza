@@ -101,22 +101,7 @@ const AboutMobile: React.FC = () => {
                       Add your about content here. You can put paragraphs, images, or
                       even other components.
                     </p>
-                    <p>
-                      Add your about content here. You can put paragraphs, images, or
-                      even other components.
-                    </p>
-                    <p>
-                      Add your about content here. You can put paragraphs, images, or
-                      even other components.
-                    </p>
-                    <p>
-                      Add your about content here. You can put paragraphs, images, or
-                      even other components.
-                    </p>
-                    <p>
-                      Add your about content here. You can put paragraphs, images, or
-                      even other components.
-                    </p>
+
               </div>
             </div>
           </div>

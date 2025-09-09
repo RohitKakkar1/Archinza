@@ -2,12 +2,12 @@ import React from "react";
 import { FaHistory, FaRedo, FaQuestionCircle, FaLifeRing, FaCommentDots, FaStar, FaFolder } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ProfilePage = () => {
+const ProfilePage2 = () => {
   return (
     <div className="w-full min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b">
-        <Link  to="/archinza-search">
+        <Link  to="/personal-user">
         <button className="text-2xl">✕</button>
         </Link>
         <h1 className="text-lg font-semibold">Profile</h1>
@@ -57,4 +57,4 @@ const MenuItem = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
   </div>
 );
 
-export default ProfilePage;
+export default ProfilePage2;

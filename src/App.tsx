@@ -34,6 +34,8 @@ import ZohoFormBusinesses from './components/ZohoFormBusiness.tsx';
 import MobileCards from './components/Personal_User.tsx';
 import DeepSearch from './components/Search/Search.tsx';
 import ProfilePage from './components/Search/search-menu.tsx';
+import ProfilePage2 from './components/personal_user/search-menu.tsx';
+import FeedbackSection from './components/ZOHOFORM/ZohoFormF.tsx';
 
 function App() {
   return (
@@ -100,11 +102,13 @@ function App() {
             <Route path="/verify" element={<Verify />} />
             <Route path="/feedback" element={<ZohoForm />} />
             <Route path="/feedback-bot" element={<ZohoFormEmbed />} />
-            <Route path="/feedback-b" element={<ZohoFormBusinesses />} />
+            <Route path="/feedback-b" element={<FeedbackSection />} />
 
             <Route path="/personal-user" element={<MobileCards />} />
             <Route path="/archinza-search" element={<DeepSearch />} />
             <Route path="/personal-account" element={<ProfilePage />} />
+            <Route path="/personal-account-2" element={<ProfilePage2 />} />
+
 
           </Routes>
         </div>

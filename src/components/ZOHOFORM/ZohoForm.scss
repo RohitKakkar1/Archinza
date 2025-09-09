@@ -1,0 +1,132 @@
+.zoho-form-container {
+  text-align: center; // align="center"
+  padding: 1rem; // p-4
+  border-radius: 0.5rem; // rounded-lg
+
+  // Dark mode
+  :root.dark & {
+    background-color: #111827; // dark:bg-gray-900
+    color: #f3f4f6; // dark:text-gray-100
+  }
+
+  .zoho-form {
+    width: 100%; // width: "100%"
+    max-width: 700px; // maxWidth: "700px"
+    margin: 0 auto; // margin: "0 auto"
+
+    // Dark mode
+    :root.dark & {
+      color: #f3f4f6; // dark:text-gray-100
+    }
+  }
+}
+
+// Desktop Layout (table)
+.zoho-table {
+  border-collapse: separate; // borderCollapse: "separate"
+  width: 100%; // width: "100%"
+
+  .table-cell {
+    padding: 8px; // cellPadding="8"
+
+    &.label-cell {
+      width: 25%; // width="25%"
+
+      // Dark mode
+      :root.dark & {
+        color: #e5e7eb; // dark:text-gray-200
+      }
+    }
+
+    &.input-cell {
+      width: 75%; // width="75%"
+    }
+
+    &.submit-cell {
+      text-align: center; // align="center"
+    }
+  }
+}
+
+// Form Controls
+.form-input {
+  width: 100%; // w-full
+  border: 1px solid #d1d5db; // border-gray-300
+  border-radius: 0.375rem; // rounded-md
+  padding: 0.5rem 0.75rem; // px-3 py-2
+  background-color: white; // bg-white
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  // Dark mode
+  :root.dark & {
+    border-color: #4b5563; // dark:border-gray-600
+    background-color: #1f2937; // dark:bg-gray-800
+    color: #f3f4f6; // dark:text-gray-100
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+  }
+}
+
+.form-select {
+  @extend .form-input;
+}
+
+.form-textarea {
+  @extend .form-input;
+  min-height: 96px; // min-h-[96px] for desktop
+  resize: vertical; // resize-y
+
+  &.mobile-textarea {
+    min-height: 120px; // min-h-[120px] for mobile
+  }
+}
+
+// Submit Button
+.submit-button {
+  background-color: #2563eb; // bg-blue-600
+  color: white; // text-white
+  border-radius: 9999px; // rounded-full
+  padding: 0.5rem 1.25rem; // px-5 py-2
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #1d4ed8; // hover:bg-blue-700
+  }
+
+  &.mobile-submit {
+    padding: 0.75rem 1.25rem; // px-5 py-3 for mobile
+  }
+}
+
+// Mobile Layout
+.mobile-form {
+  display: flex;
+  flex-direction: column; // flexDirection: "column"
+  gap: 12px; // gap: "12px"
+  text-align: left; // textAlign: "left"
+
+  .mobile-input {
+    @extend .form-input;
+  }
+
+  .mobile-select {
+    @extend .form-select;
+  }
+
+  .mobile-textarea {
+    @extend .form-textarea;
+    min-height: 120px; // min-h-[120px]
+  }
+
+  .mobile-submit-button {
+    @extend .submit-button;
+    padding: 0.75rem 1.25rem; // px-5 py-3
+  }
+}

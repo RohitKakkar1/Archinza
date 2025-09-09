@@ -1,0 +1,94 @@
+// ZohoFormF.scss
+
+.feedback-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding: 0.5rem;
+
+  // Dark mode
+  &.dark {
+    background-color: #111827;
+  }
+}
+
+.feedback-container {
+  width: 100%;
+  max-width: 64rem; // 5xl
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+
+  // Dark mode
+  &.dark {
+    background-color: #111827;
+  }
+
+  // Medium screens and up
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2rem;
+  }
+}
+
+.left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  &.dark {
+    background-color: #111827;
+  }
+
+  // Medium screens and up
+  @media (min-width: 768px) {
+    align-items: flex-start;
+  }
+}
+
+.heading-section {
+  .main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+
+    &.dark {
+      color: #f3f4f6;
+    }
+  }
+
+  .subtitle {
+    margin-top: 0.5rem;
+    color: #4b5563;
+
+    &.dark {
+      color: #f3f4f6;
+    }
+  }
+}
+
+.feedback-image {
+  width: 100%;
+  max-height: 16rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  flex: 1;
+  width: 100%;
+}

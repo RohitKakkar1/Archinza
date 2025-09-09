@@ -1,5 +1,5 @@
 import { ArrowRight, MessageSquare, Image as ImageIcon } from "lucide-react";
-import Header from "./Header";
+import Header from "./personal_user/Header-User";
 import DualLevelTabs from "./personal_user/Dual_level_tabs";
 import SearchBar from "./personal_user/search";
 import Middle from "./personal_user/Stack";
@@ -22,10 +22,6 @@ export default function MobileCards() {
           <SearchBar />
         </div>
 
-        {/* Middle (scrolls away) */}
-        {/* <div className="my-4">
-          <Middle />
-        </div> */}
 
         {/* Sticky Dual Tabs */}
         <div className="sticky top-24 z-100 bg-white dark:bg-gray-900">
