@@ -1,138 +1,128 @@
-import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import "./MasonryScroll.scss"; // new SCSS file
 
-export default function ResponsiveImageLayout() {
-  const navigate = useNavigate();
-  const scrollRef = useRef<HTMLDivElement>(null);
+type ImgData = {
+  src: string;
+  width: number;
+  height: number;
+  ratio: number; // width / height
+};
 
-  const images = [
-    "/BusinessView/Wriver/1.jpg",
-    "/BusinessView/Wriver/2.jpg",
-    "/BusinessView/Wriver/6.jpg",
-    "/BusinessView/Wriver/7.jpg",
-    "/BusinessView/Wriver/8.jpg",
-    "/BusinessView/Wriver/21.jpg",        // The dynamic input for the images to come here
-    "/BusinessView/Wriver/18.jpg",
-    "/BusinessView/Wriver/20.jpg",
-    "/BusinessView/Wriver/11.jpg",
-    "/BusinessView/Wriver/22.jpg",
-    "/BusinessView/Wriver/23.jpg",
-    "/BusinessView/Wriver/30.jpg",
-    "/BusinessView/Wriver/30.jpg",
-    "/BusinessView/Wriver/35.jpg",
+export default function MasonryScroll() {
+  const imagePaths = [
+    "/BusinessView/Chirmee/1.jpg",
+    "/BusinessView/Chirmee/2.jpg",
+    "/BusinessView/Chirmee/6.jpg",
+    "/BusinessView/Chirmee/7.jpg",
+    "/BusinessView/Chirmee/8.jpg",
+    "/BusinessView/Chirmee/21.jpg",
+    "/BusinessView/Chirmee/22.jpg",
+    "/BusinessView/Chirmee/23.jpg",
+    "/BusinessView/Chirmee/30.jpg",
+    "/BusinessView/Chirmee/31.jpg",
+    "/BusinessView/Chirmee/35.jpg",
+    "/BusinessView/Chirmee/18.jpg",
+    "/BusinessView/Chirmee/20.jpg",
+    "/BusinessView/Chirmee/11.jpg",
   ];
 
-  // Apply rules
-  let displayImages: string[] = [];
-  if (images.length === 14) {
-    displayImages = images; // all 14
-  } else if (images.length >= 7) {
-    displayImages = images.slice(0, 7); // keep first 10
-  } else {
-    displayImages = images; // less than 7 → linear
-  }
+  const [columns, setColumns] = useState<{ type: string; imgs: ImgData[] }[]>([]);
 
-  const generateColumns = () => {
-    const cols: { type: string; imgs: string[] }[] = [];
-    let i = 0;
-    const cycle = ["C", "A", "B"];
+  useEffect(() => {
+    const loadImages = async () => {
+      const promises = imagePaths.map(
+        (src) =>
+          new Promise<ImgData>((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+              resolve({
+                src,
+                width: img.width,
+                height: img.height,
+                ratio: img.width / img.height,
+              });
+            };
+            img.onerror = () => {
+              resolve({ src, width: 1, height: 1, ratio: 1 });
+            };
+          })
+      );
+      const loaded = await Promise.all(promises);
 
-    while (i < displayImages.length) {
-      for (let offset = 0; offset < cycle.length && i < displayImages.length; offset++) {
-        const type = cycle[offset % cycle.length];
+      const horizontals = [...loaded]
+        .filter((img) => img.ratio > 1)
+        .sort((a, b) => b.ratio - a.ratio);
 
-        if ((type === "A" || type === "B") && i + 1 < displayImages.length) {
-          cols.push({ type, imgs: [displayImages[i], displayImages[i + 1]] });
-          i += 2;
-        } else if (type === "C" && i + 2 < displayImages.length) {
-          cols.push({ type, imgs: [displayImages[i], displayImages[i + 1], displayImages[i + 2]] });
-          i += 3;
-        } else {
-          cols.push({ type: "A", imgs: [displayImages[i]] });
-          i++;
+      let horizIndex = 0;
+      let i = 0;
+      const cycle = ["C", "A", "B"];
+      const cols: { type: string; imgs: ImgData[] }[] = [];
+
+      while (i < loaded.length) {
+        for (let offset = 0; offset < cycle.length && i < loaded.length; offset++) {
+          const type = cycle[offset];
+
+          if ((type === "A" || type === "B") && i + 1 < loaded.length) {
+            cols.push({ type, imgs: [loaded[i], loaded[i + 1]] });
+            i += 2;
+          } else if (type === "C" && i + 2 < loaded.length) {
+            let topImg: ImgData;
+            if (horizIndex < horizontals.length) {
+              topImg = horizontals[horizIndex];
+              horizIndex++;
+              const idx = loaded.findIndex((x) => x.src === topImg.src);
+              if (idx !== -1) loaded.splice(idx, 1);
+            } else {
+              topImg = loaded[i];
+              i++;
+            }
+            const bottom1 = loaded[i];
+            const bottom2 = loaded[i + 1];
+            cols.push({ type: "C", imgs: [topImg, bottom1, bottom2] });
+            i += 2;
+          } else {
+            cols.push({ type: "A", imgs: [loaded[i]] });
+            i++;
+          }
         }
       }
-    }
-    return cols;
-  };
 
-  const columns = generateColumns();
+      setColumns(cols);
+    };
 
-  const renderGrid = () => (
-    <div
-      ref={scrollRef}
-      className="w-full overflow-x-auto p-2 bg-white dark:bg-gray-900 scrollbar-hide"
-    >
-      <div className="flex h-[320px] gap-2">
+    loadImages();
+  }, []);
+
+  return (
+    <div className="masonry-scroll">
+      <div className="masonry-track">
         {columns.map((col, idx) => {
           if (col.type === "A") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "35%" }}
-                />
-                {col.imgs[1] && (
-                  <img
-                    src={col.imgs[1]}
-                    className="w-full object-cover rounded-xl"
-                    style={{ height: "65%" }}
-                  />
-                )}
+              <div key={idx} className="col col-a">
+                <img src={col.imgs[0].src} className="img img-top" />
+                {col.imgs[1] && <img src={col.imgs[1].src} className="img img-bottom" />}
               </div>
             );
           }
 
           if (col.type === "B") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "65%" }}
-                />
-                {col.imgs[1] && (
-                  <img
-                    src={col.imgs[1]}
-                    className="w-full object-cover rounded-xl"
-                    style={{ height: "35%" }}
-                  />
-                )}
+              <div key={idx} className="col col-b">
+                <img src={col.imgs[0].src} className="img img-top-large" />
+                {col.imgs[1] && <img src={col.imgs[1].src} className="img img-bottom-small" />}
               </div>
             );
           }
 
           if (col.type === "C") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 2)" }}
-              >
-                <img
-                  src={col.imgs[0]}
-                  className="w-full object-cover rounded-xl"
-                  style={{ height: "50%" }}
-                />
-                <div className="flex h-[50%]">
-                  <img
-                    src={col.imgs[1]}
-                    className="w-1/2 object-cover rounded-xl pr-1"
-                  />
-                  <img
-                    src={col.imgs[2]}
-                    className="w-1/2 object-cover rounded-xl pl-1"
-                  />
+              <div key={idx} className="col col-c">
+                <img src={col.imgs[0].src} className="img img-wide" />
+                <div className="col-c-bottom">
+                  <img src={col.imgs[1].src} className="img img-half left" />
+                  <img src={col.imgs[2].src} className="img img-half right" />
                 </div>
               </div>
             );
@@ -141,38 +131,6 @@ export default function ResponsiveImageLayout() {
           return null;
         })}
       </div>
-    </div>
-  );
-
-  const renderLinear = () => (
-    <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex gap-2 snap-x snap-mandatory">
-        {displayImages.map((src, idx) => (
-          <div
-            key={idx}
-            className="flex-shrink-0 snap-center"
-            style={{ height: "320px" }}
-          >
-            <img src={src} className="h-full object-contain rounded-lg" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="relative w-full">
-      {/* Back to Edit Button */}
-      <button
-        onClick={() => navigate("/wriver-edit")}
-        className="absolute pl-1 pr-3 py-2 top-4 left-4 z-30 bg-white/90 text-gray-900 rounded-full shadow-md text-base font-medium flex items-center hover:bg-white/80 transition"
-      >
-        <ChevronLeft className="w-6 h-6" />
-        Edit
-      </button>
-
-      {/* Conditional Render */}
-      {displayImages.length >= 7 ? renderGrid() : renderLinear()}
     </div>
   );
 }

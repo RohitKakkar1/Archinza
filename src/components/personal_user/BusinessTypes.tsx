@@ -72,10 +72,13 @@ export default function BusinessCategories() {
   return (
     <div className="flex font-sans flex-col w-full gap-2 py-4">
       {/* Category Title */}
-      <div className="flex items-center gap-3">
-        <h2 className="text-lg font-semibold text-gray-800">Businesses</h2>
-        <span className="text-xl">›</span>
+      <div className="">
+        <div className="flex items-center gap-3">
+          <h2 className="text-lg font-semibold text-gray-800">Businesses on Archinza</h2>
+          <span className="text-xl">›</span>
+        </div>
       </div>
+      
 
       {/* Carousel */}
       <div
@@ -112,7 +115,7 @@ export default function BusinessCategories() {
             <div className="mt-2">
               <h3 className="text-sm font-medium">{card.type}</h3>
               <p className="text-xs text-gray-500">
-                {card.saves} Saves · {card.time}
+                {card.saves} Businesses · {card.time}
               </p>
             </div>
           </div>

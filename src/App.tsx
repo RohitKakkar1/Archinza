@@ -36,6 +36,7 @@ import DeepSearch from './components/Search/Search.tsx';
 import ProfilePage from './components/Search/search-menu.tsx';
 import ProfilePage2 from './components/personal_user/search-menu.tsx';
 import FeedbackSection from './components/ZOHOFORM/ZohoFormF.tsx';
+import LandingScreen from './components/AfterFeedback.tsx';
 
 function App() {
   return (
@@ -109,6 +110,7 @@ function App() {
             <Route path="/personal-account" element={<ProfilePage />} />
             <Route path="/personal-account-2" element={<ProfilePage2 />} />
 
+            <Route path="/thanks-feedback" element={<LandingScreen />} />
 
           </Routes>
         </div>

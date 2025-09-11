@@ -1,7 +1,12 @@
 import React from "react";
 import { Pencil } from "lucide-react";
+import "./MasonryScroll_Edit.scss";
 
 export default function MasonryScroll_Edit() {
+  // You can determine dark mode based on your app's theme state
+  // This is a placeholder - replace with your actual dark mode logic
+  const isDarkMode = false; // Replace with your dark mode state logic
+
   const images = [
     "/BusinessView/Wriver/1.jpg",
     "/BusinessView/Wriver/2.jpg",
@@ -19,25 +24,46 @@ export default function MasonryScroll_Edit() {
     "/BusinessView/Wriver/35.jpg",
   ];
 
+  const handleEditClick = (imageIndex: number) => {
+    // Add your edit functionality here
+    console.log(`Edit image at index: ${imageIndex}`);
+  };
+
   const generateColumns = () => {
-    const cols: { type: string; imgs: string[] }[] = [];
+    const cols: { type: string; imgs: string[]; indices: number[] }[] = [];
     let i = 0;
 
     const cycle = ["C", "A", "B"];
     let startIndex = 0;
 
     while (i < images.length) {
-      for (let offset = 0; offset < cycle.length && i < images.length; offset++) {
+      for (
+        let offset = 0;
+        offset < cycle.length && i < images.length;
+        offset++
+      ) {
         const type = cycle[(startIndex + offset) % cycle.length];
 
         if ((type === "A" || type === "B") && i + 1 < images.length) {
-          cols.push({ type, imgs: [images[i], images[i + 1]] });
+          cols.push({
+            type,
+            imgs: [images[i], images[i + 1]],
+            indices: [i, i + 1],
+          });
           i += 2;
         } else if (type === "C" && i + 2 < images.length) {
-          cols.push({ type, imgs: [images[i], images[i + 1], images[i + 2]] });
+          cols.push({
+            type,
+            imgs: [images[i], images[i + 1], images[i + 2]],
+            indices: [i, i + 1, i + 2],
+          });
           i += 3;
         } else {
-          cols.push({ type: "A", imgs: [images[i]] });
+          cols.push({
+            type: "A",
+            imgs: [images[i]],
+            indices: [i],
+          });
           i++;
         }
       }
@@ -48,33 +74,37 @@ export default function MasonryScroll_Edit() {
   const columns = generateColumns();
 
   return (
-    <div className="w-full overflow-x-auto p-2 bg-white dark:bg-gray-900 scrollbar-hide">
-      <div className="flex h-[320px] gap-2">
+    <div className={`edit-container ${isDarkMode ? "dark" : ""}`}>
+      <div className="edit-layout">
         {columns.map((col, idx) => {
           if (col.type === "A") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <div className="relative" style={{ height: "35%" }}>
+              <div key={idx} className="edit-column column-a">
+                <div className="image-wrapper height-35">
                   <img
                     src={col.imgs[0]}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="edit-image"
+                    alt={`Edit image ${col.indices[0]}`}
                   />
-                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                    <Pencil className="w-4 h-4 text-gray-800" />
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEditClick(col.indices[0])}
+                  >
+                    <Pencil className="edit-icon" />
                   </button>
                 </div>
                 {col.imgs[1] && (
-                  <div className="relative" style={{ height: "65%" }}>
+                  <div className="image-wrapper height-65">
                     <img
                       src={col.imgs[1]}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="edit-image"
+                      alt={`Edit image ${col.indices[1]}`}
                     />
-                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                      <Pencil className="w-4 h-4 text-gray-800" />
+                    <button
+                      className="edit-button"
+                      onClick={() => handleEditClick(col.indices[1])}
+                    >
+                      <Pencil className="edit-icon" />
                     </button>
                   </div>
                 )}
@@ -84,28 +114,32 @@ export default function MasonryScroll_Edit() {
 
           if (col.type === "B") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 3.8)" }}
-              >
-                <div className="relative" style={{ height: "65%" }}>
+              <div key={idx} className="edit-column column-b">
+                <div className="image-wrapper height-65">
                   <img
                     src={col.imgs[0]}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="edit-image"
+                    alt={`Edit image ${col.indices[0]}`}
                   />
-                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                    <Pencil className="w-4 h-4 text-gray-800" />
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEditClick(col.indices[0])}
+                  >
+                    <Pencil className="edit-icon" />
                   </button>
                 </div>
                 {col.imgs[1] && (
-                  <div className="relative" style={{ height: "35%" }}>
+                  <div className="image-wrapper height-35">
                     <img
                       src={col.imgs[1]}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="edit-image"
+                      alt={`Edit image ${col.indices[1]}`}
                     />
-                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                      <Pencil className="w-4 h-4 text-gray-800" />
+                    <button
+                      className="edit-button"
+                      onClick={() => handleEditClick(col.indices[1])}
+                    >
+                      <Pencil className="edit-icon" />
                     </button>
                   </div>
                 )}
@@ -115,37 +149,45 @@ export default function MasonryScroll_Edit() {
 
           if (col.type === "C") {
             return (
-              <div
-                key={idx}
-                className="flex flex-col gap-2 flex-shrink-0"
-                style={{ width: "calc(100vw / 2)" }}
-              >
-                <div className="relative" style={{ height: "50%" }}>
+              <div key={idx} className="edit-column column-c">
+                <div className="image-wrapper height-50">
                   <img
                     src={col.imgs[0]}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="edit-image"
+                    alt={`Edit image ${col.indices[0]}`}
                   />
-                  <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                    <Pencil className="w-4 h-4 text-gray-800" />
+                  <button
+                    className="edit-button"
+                    onClick={() => handleEditClick(col.indices[0])}
+                  >
+                    <Pencil className="edit-icon" />
                   </button>
                 </div>
-                <div className="flex h-[50%]">
-                  <div className="relative w-1/2 pr-1">
+                <div className="split-container">
+                  <div className="split-wrapper split-left">
                     <img
                       src={col.imgs[1]}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="split-image"
+                      alt={`Edit image ${col.indices[1]}`}
                     />
-                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                      <Pencil className="w-4 h-4 text-gray-800" />
+                    <button
+                      className="split-button"
+                      onClick={() => handleEditClick(col.indices[1])}
+                    >
+                      <Pencil className="split-icon" />
                     </button>
                   </div>
-                  <div className="relative w-1/2 pl-1">
+                  <div className="split-wrapper split-right">
                     <img
                       src={col.imgs[2]}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="split-image"
+                      alt={`Edit image ${col.indices[2]}`}
                     />
-                    <button className="absolute top-2 right-2 bg-white/60 hover:bg-white p-1 rounded-full shadow-md">
-                      <Pencil className="w-4 h-4 text-gray-800" />
+                    <button
+                      className="split-button"
+                      onClick={() => handleEditClick(col.indices[2])}
+                    >
+                      <Pencil className="split-icon" />
                     </button>
                   </div>
                 </div>

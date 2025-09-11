@@ -14,6 +14,7 @@ import BusinessCarousel from "./BusinessTile";
 import BusinessCategories from "./BusinessTypes";
 import InterestSelector from "./Interest";
 import Interest_Project from "./Interest_Project";
+import RecentlyAddedBusinesses from "./recent";
 import PersonalCategories from "./PersonalCards";
 
 export default function DualLevelTabs() {
@@ -93,6 +94,8 @@ export default function DualLevelTabs() {
         <BusinessCarousel />
         
         <BusinessCategories />
+
+        <RecentlyAddedBusinesses />
 
 
 
