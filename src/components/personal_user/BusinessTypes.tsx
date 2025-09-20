@@ -70,11 +70,11 @@ export default function BusinessCategories() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex font-sans flex-col w-full gap-2 py-4">
+    <div className="flex font-sans flex-col w-full gap-2 pb-4">
       {/* Category Title */}
       <div className="">
         <div className="flex items-center gap-3">
-          <h2 className="text-lg font-semibold text-gray-800">Businesses on Archinza</h2>
+          <h2 className="text-lg font-semibold text-gray-800">Saved</h2>
           <span className="text-xl">›</span>
         </div>
       </div>

@@ -3,10 +3,10 @@ import { useState } from "react"
 const categories = [
   "Brands",
   "Architects",
-  "Interest",
-  "Interest",
-  "Interest",
-  "Interest",
+  "Products",
+  "Materials",
+    "Products",
+  "Materials",
 ]
 
 export default function Interest_Project() {

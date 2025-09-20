@@ -16,6 +16,7 @@ import InterestSelector from "./Interest";
 import Interest_Project from "./Interest_Project";
 import RecentlyAddedBusinesses from "./recent";
 import PersonalCategories from "./PersonalCards";
+import AiCardSlider from "./Nudge_Slider";
 
 export default function DualLevelTabs() {
   const [activeMain, setActiveMain] = useState("For You");
@@ -49,12 +50,13 @@ export default function DualLevelTabs() {
     <section className="flex flex-col min-h-screen pb-20">
       {activeMain === "For You" && (
         <>
+        
 
         <BusinessCarousel />
+                <InterestSelector />
 
-       <PersonalCategories />
 
-        <InterestSelector />
+
 
           {/* Sticky Sub Tabs (positioned below SearchBar) */}
           <div
@@ -90,16 +92,20 @@ export default function DualLevelTabs() {
 
             {activeMain === "For Projects" && (
         <>
-
+        
+        <Interest_Project />
+                
         <BusinessCarousel />
+
         
         <BusinessCategories />
+        
+<AiCardSlider />
+
 
         <RecentlyAddedBusinesses />
 
 
-
-        <Interest_Project />
 
           {/* Sticky Sub Tabs (positioned below SearchBar) */}
           <div

@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, X } from "lucide-react";
 
-const AskBusiness = () => {
+const AskArchinzaSearch = () => {
   const [open, setOpen] = useState(false);
 
-  const questions = [
-    "Where are Wriver stores located?",
-    "What’s the best way to style my space with Wriver furniture?",
-    "Does Wriver customize furniture for my home or office?",
-    "How can I get design consultation from Wriver?",
-    "What materials and finishes are available in the Wriver catalog?",
-    "How long is the lead time for custom furniture orders?",
-  ];
+const questions = [
+  "What are the tallest mountains in the world?",
+  "Which mountains are the best for hiking or trekking?",
+  "What kinds of plants and animals live in mountain regions?",
+  "How do mountains affect the local climate?",
+  "What is the geological process behind mountain formation?",
+  "Are there any famous mountain peaks I should know about?",
+  "What safety tips should I keep in mind while climbing mountains?",
+  "How can we help conserve mountain ecosystems?",
+];
 
   // 🔒 Prevent body scroll when open
   useEffect(() => {
@@ -68,7 +70,7 @@ const AskBusiness = () => {
 >
   <div className="flex flex-row items-center justify-center gap-2">
         <h2 className="text-base font-semibold text-gray-800 dark:text-gray-200">
-      Ask Wriver
+      More about Mountains
     </h2>
     <div className="text-gray-800 dark:text-gray-200"><ChevronRight /></div>
 
@@ -117,4 +119,4 @@ const AskBusiness = () => {
   );
 };
 
-export default AskBusiness;
+export default AskArchinzaSearch;

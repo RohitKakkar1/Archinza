@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, X } from "lucide-react";
 
-const AskBusiness = () => {
+const AskArchinzaStair = () => {
   const [open, setOpen] = useState(false);
 
-  const questions = [
-    "Where are Wriver stores located?",
-    "What’s the best way to style my space with Wriver furniture?",
-    "Does Wriver customize furniture for my home or office?",
-    "How can I get design consultation from Wriver?",
-    "What materials and finishes are available in the Wriver catalog?",
-    "How long is the lead time for custom furniture orders?",
-  ];
+const questions = [
+  "Who can design and build a custom staircase for my home?",
+  "Where can I find reliable contractors for luxury interiors?",
+  "Who can help me get bespoke furniture made locally?",
+  "Where can I buy high-quality building materials nearby?",
+  "Who offers end-to-end architectural services for residential projects?",
+  "Where can I find skilled craftsmen for wooden work?",
+  "Who can help with both design and construction under one roof?",
+  "Where can I get guidance on choosing the right materials for my space?",
+];
+
 
   // 🔒 Prevent body scroll when open
   useEffect(() => {
@@ -68,7 +71,7 @@ const AskBusiness = () => {
 >
   <div className="flex flex-row items-center justify-center gap-2">
         <h2 className="text-base font-semibold text-gray-800 dark:text-gray-200">
-      Ask Wriver
+      Questions on Metal Staircase
     </h2>
     <div className="text-gray-800 dark:text-gray-200"><ChevronRight /></div>
 
@@ -117,4 +120,4 @@ const AskBusiness = () => {
   );
 };
 
-export default AskBusiness;
+export default AskArchinzaStair;

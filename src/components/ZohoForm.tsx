@@ -69,7 +69,7 @@ export default function ZohoForm() {
         <input
           type="hidden"
           name="returnURL"
-          value="https://archinza-ai.vercel.app/"
+          value="https://api.whatsapp.com/send?phone=919871185558&text=Feedback%20done%2C%20want%20to%20ask%20more"
         />
 
         {/* Desktop Layout (table) */}
