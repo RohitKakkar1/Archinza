@@ -12,75 +12,71 @@ const FeaturesUser: React.FC = () => {
   const [activeTab, setActiveTab] = useState('ask');
 
   const tabs = [
-    { id: 'ask', label: 'Personal User' },
-    { id: 'search', label: 'Business Bot' },
-    { id: 'reach', label: 'Archinza Gallery' },
-    { id: 'connect', label: 'Connect' }
+    { id: 'search', label: 'Search' },
+    { id: 'ask', label: 'Ask' },
+    { id: 'save', label: 'Save' },
+    { id: 'explore', label: 'Explore' }
   ];
 
 
   const tabContent: Record<string, TabContent> = {
-    ask: {
-      id: 'ask',
-      title: 'Easy Onboarding',
-      heading: 'Create your Business Page',
-      items: [
-        'WHether you are an architect or material vendor',
-        'Get Started with our Easy Onboarding',
-        'Ask any of your things Ask any of your things'
-      ],
-      image:'PersonalSearch.webp'
-    },
     search: {
       id: 'search',
-      title: 'Business Bot',
-      heading: 'Get your business bot',
+      title: 'Search, Made Smarter',
+      heading: 'Search, Made Smarter',
       items: [
-        'Your bot talks to your customers when you are sleeping ',
-        'Find relevant architectural solutions',
-        'Access curated content and materials'
+        'Find exactly what you’re looking for with Archinza’s intelligent text/ image based search. Whether it’s experts, products, services, or materials, our curated results simplify discovery.',
+        'Discover people and businesses near you',
+        'Search products, materials, and services instantly',
+        'Get results tailored to your needs'
+
       ],
-            image:'Amazon_rufus.png'
+      image:'Personal_Features/Search.png'
     },
-    reach: {
-      id: 'reach',
-      title: 'Archinza Gallery',
-      heading: 'Reach out to experts',
+    ask: {
+      id: 'ask',
+      title: 'Ask, and Get Answers',
+      heading: 'Ask, and Get Answers',
       items: [
-        'Connect with industry professionals',
-        'Get expert advice on your projects',
-        'Access mentorship opportunities'
+        'Archinza’s WhatsApp bot gives you instant access to knowledge and support. Ask anything  from design questions to vendor details and get quick, accurate responses powered by our network and AI. ',
+        'Ask queries anytime, anywhere',
+        'Get instant guidance and trusted answers',
+        'Stay connected without endless searching'
+
       ],
-            image:'Archinza_Gallery.png',
+            image:'Personal_Features/Ask.png'
     },
-    connect: {
-      id: 'connect',
-      title: 'Connect',
-      heading: 'Connect with peers',
+    save: {
+      id: 'save',
+      title: 'Save, for Later',
+      heading: 'Save, for Later',
       items: [
-        'Join our community of architects',
-        'Collaborate on projects',
-        'Share knowledge and experiences'
+        'Keep track of what inspires you. Save your favorite people, products, or ideas into your personal space so they’re ready whenever you want to revisit or act on them.',
+        'Save experts, products, and materials',
+        'Organize your favorite finds easily ',
+        'Access your list anytime on any device ',
+
       ],
-            image:'BusinessDBIn.png'
+            image:'Personal_Features/Save.png',
     },
-    recommend:{
-      id: 'connect',
-      title: 'Connect',
-      heading: 'Connect with peers',
+    explore: {
+      id: 'explore',
+      title: 'Explore, Without Limits',
+      heading: 'Explore, Without Limits',
       items: [
-        'Join our community of architects',
-        'Collaborate on projects',
-        'Share knowledge and experiences'
+        'Archinza opens up a world of opportunities. Go beyond search to explore curated jobs, courses, events, and industry updates everything you need to grow and stay inspired in design and build.',
+        'Find jobs, internships, and courses',
+        'Stay updated with events and news',
+        'Explore people, ideas, and innovations'
       ],
-            image:'Recommendations.png'
-    }
+            image:'Personal_Features/Explore.png'
+    },
   };
 
   const currentContent = tabContent[activeTab];
 
   return (
-    <div className="max-w-6xl mx-auto p-8">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
   {/* Desktop Section */}
   <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 min-h-[500px] hidden lg:block">
@@ -121,12 +117,12 @@ const FeaturesUser: React.FC = () => {
 
       {/* Right Mockup */}
       <div className="flex-1 max-w-md ml-8">
-        <div className="bg-white rounded-2xl shadow-xl hover:rotate-0 transition-transform duration-300">
+        <div className="  hover:rotate-0 transition-transform duration-300">
           {currentContent.image && (
             <img
               src={currentContent.image}
               alt={currentContent.heading}
-              className="w-full max-w-md rounded-lg border-none"
+              className="w-full max-w-md "
             />
           )}
         </div>
