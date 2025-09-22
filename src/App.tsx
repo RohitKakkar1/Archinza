@@ -9,7 +9,7 @@ import HeroSection from './components/Hero';
 import Personal from './components/Personal.tsx';
 import Business from './components/Business.tsx'; // New page
 import MobileHeroSection from './components/MobileHeroSection.tsx';
-
+import ZohoFeedbackForm from './components/form.tsx';
 import GetStarted from './components/GetStarted.tsx';
 import ContactUsSection from './components/contactus.tsx';
 import FoundingUserCard from './components/foundingUserCard.tsx';
@@ -116,6 +116,7 @@ function App() {
             <Route path="/search-result" element={<SearchResult />} />
 
             <Route path="/search-results-page" element={<SearchResultsPage />} />
+            <Route path="/zoho" element={<ZohoFeedbackForm />} />
 
 
 

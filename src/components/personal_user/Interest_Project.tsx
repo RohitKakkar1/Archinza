@@ -5,7 +5,7 @@ const categories = [
   "Architects",
   "Products",
   "Materials",
-    "Products",
+  "Products",
   "Materials",
 ]
 
