@@ -9,7 +9,6 @@ import HeroSection from './components/Hero';
 import Personal from './components/Personal.tsx';
 import Business from './components/Business.tsx'; // New page
 import MobileHeroSection from './components/MobileHeroSection.tsx';
-import ZohoFeedbackForm from './components/form.tsx';
 import GetStarted from './components/GetStarted.tsx';
 import ContactUsSection from './components/contactus.tsx';
 import FoundingUserCard from './components/foundingUserCard.tsx';
@@ -39,6 +38,7 @@ import FeedbackSection from './components/ZOHOFORM/ZohoFormF.tsx';
 import LandingScreen from './components/AfterFeedback.tsx';
 import SearchResult from './components/personal_user/SearchResults/SearchResults.tsx';
 import SearchResultsPage from './components/personal_user/SearchResults/SearchResultsPage.tsx';
+import DemoPage from './components/personal_user/SearchResults/DemoPage.tsx';
 
 function App() {
   return (
@@ -116,7 +116,7 @@ function App() {
             <Route path="/search-result" element={<SearchResult />} />
 
             <Route path="/search-results-page" element={<SearchResultsPage />} />
-            <Route path="/zoho" element={<ZohoFeedbackForm />} />
+            <Route path="/DemoPage" element={<DemoPage />} />
 
 
 

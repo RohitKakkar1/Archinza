@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./search";
+import SearchBar from "../search";
 
 export default function HeroSection() {
   const videoSources = ["/Video/1.mp4", "/Video/2.mp4", "/Video/3.mp4"];
   const [currentVideo, setCurrentVideo] = useState(0);
 
-  // Change video every 10s
+  // Change video every 4s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % videoSources.length);
@@ -14,7 +14,7 @@ export default function HeroSection() {
   }, [videoSources.length]);
 
   return (
-    <div className="relative w-full h-[320px] md:h-[60vh] overflow-hidden">
+    <div className="relative w-full h-[360px] overflow-hidden">
       {/* Background Videos with fade */}
       {videoSources.map((src, i) => (
         <video
@@ -31,20 +31,28 @@ export default function HeroSection() {
       ))}
 
       {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
 
       {/* Foreground content */}
-      <div className="relative z-10 flex flex-col py-16 h-[40%] text-center gap-4 px-6">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-4xl font-semibold text-white">Hey Shruti</h1>
-          <h2 className="text-lg text-gray-200">
-            Let’s help you find what you love in design.
-          </h2>
+      <div className="relative z-10 flex flex-col items-center px-6 py-6 gap-6">
+        {/* Hi Shruti */}
+        <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
+          Hi Shruti
+        </h1>
+
+        {/* Search Bar */}
+        <div className="w-full max-w-xl">
+          <SearchBar />
         </div>
 
-        {/* Sticky Search */}
-        <div className="sticky top-0 w-full max-w-xl mx-auto">
-          <SearchBar />
+        {/* Additional content below search bar */}
+        <div className="mt-4 text-center text-gray-200 space-y-2">
+          <p className="text-sm md:text-base">
+            Discover curated design inspiration, projects, and ideas.
+          </p>
+          <p className="text-sm md:text-base">
+            Explore trending concepts, top creators, and personalized recommendations.
+          </p>
         </div>
       </div>
     </div>

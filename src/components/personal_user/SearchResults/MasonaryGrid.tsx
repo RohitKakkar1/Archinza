@@ -1,104 +1,34 @@
-import React, { useMemo } from "react";
+import React, { useState } from "react";
+import { Bookmark } from "lucide-react"; // Heart icon
+import ImagePopup from "./ImagePopup";
 
-type Category = "All" | "Architecture" | "Interior" | "Landscape" | "Product";
-
-interface Item {
-  id: string;
-  image: string;
-  category: Category;
-  isAd?: boolean;
-  advertiser?: string;
-  title?: string;
-  description?: string;
+interface GalleryImage {
+  src: string;
+  author: string;
 }
 
-export default function MasonryGrid() {
-  const baseItems: Item[] = useMemo(() => {
-    const cats: Category[] = ["Architecture", "Interior", "Landscape", "Product"];
-    const heights = [300, 350, 400, 450, 500];
-    return Array.from({ length: 60 }).map((_, i) => ({
-      id: `r-${i}`,
-      image: `https://picsum.photos/seed/archinza${i}/400/${heights[i % heights.length]}`,
-      category: cats[i % cats.length],
-    }));
-  }, []);
+interface Filter {
+  src: string;
+  label: string;
+}
 
-  const ads: Item[] = [
-    {
-      id: "ad-1",
-      image: "https://picsum.photos/seed/ad1/600/380",
-      category: "All",
-      title: "Premium Laminates — 30% Off",
-      description: "High quality finishes for modern spaces.",
-      isAd: true,
-      advertiser: "Archinza Ads",
-    },
-    {
-      id: "ad-2",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },    {
-      id: "ad-3",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },    {
-      id: "ad-4",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },    {
-      id: "ad-5",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },    {
-      id: "ad-6",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },
-     {
-      id: "ad-6",
-      image: "https://picsum.photos/seed/ad2/600/420",
-      category: "All",
-      title: "Designer Lighting Collections",
-      description: "Illuminate your project with curated pieces.",
-      isAd: true,
-      advertiser: "BrightCo",
-    },
-    
-  ];
+interface MasonryGridProps {
+  images: GalleryImage[];
+  filters?: Filter[];
+}
 
-  const displayItems: Item[] = useMemo(() => {
-    const arr: Item[] = [...baseItems];
-    const adInterval = 6;
-    let adIndex = 0;
-    for (let i = adInterval; i < arr.length + adIndex && adIndex < ads.length; i += adInterval + 1) {
-      arr.splice(i, 0, ads[adIndex]);
-      adIndex++;
-    }
-    return arr;
-  }, [baseItems, ads]);
+export default function MasonryGrid({ images, filters }: MasonryGridProps) {
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [savedImages, setSavedImages] = useState<number[]>([]); // store saved image indexes
+
+  const toggleSave = (index: number) => {
+    setSavedImages((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   return (
-    <div className="flex-1 h-screen overflow-y-auto no-scrollbar">
+    <div className="w-full h-full overflow-y-auto no-scrollbar px-2">
       <style>{`
         .masonry {
           column-count: 2;
@@ -106,44 +36,71 @@ export default function MasonryGrid() {
         }
         @media (min-width: 1024px) {
           .masonry {
-            column-count: 3;
-            column-gap: 0.5rem;
+            column-count: 4;
           }
         }
         .masonry-item {
           break-inside: avoid;
-          -webkit-column-break-inside: avoid;
           margin-bottom: 0.5rem;
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      <div className="masonry px-2">
-        {displayItems.map((it) =>
-          it.isAd ? (
-            <article
-              key={it.id}
-              className="masonry-item rounded-2xl overflow-hidden border border-yellow-100 bg-yellow-50 shadow-sm"
-            >
-              <img src={it.image} alt={it.title} className="w-full h-auto block" />
-              <div className="p-3">
-                <div className="text-xs text-yellow-700 font-semibold">Sponsored</div>
-                <h3 className="mt-1 text-sm font-semibold text-gray-900">{it.title}</h3>
-                <p className="text-xs text-gray-600 mt-1">{it.description}</p>
-                <div className="text-xs text-gray-500 mt-2">Ad by {it.advertiser}</div>
-              </div>
-            </article>
-          ) : (
+      {/* Filters */}
+      {filters && filters.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {filters.map((filter, idx) => (
             <div
-              key={it.id}
-              className="masonry-item overflow-hidden rounded-xl shadow-sm hover:shadow-md transition border border-gray-200"
+              key={idx}
+              className="flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-1 py-1 shadow-sm hover:shadow-md cursor-pointer transition"
             >
-              <img src={it.image} alt="" className="w-full h-auto block" />
+              <img src={filter.src} alt={filter.label} className="w-6 h-6 rounded-full object-cover" />
+              <span className="text-sm text-gray-700 dark:text-gray-200">{filter.label}</span>
             </div>
-          )
-        )}
+          ))}
+        </div>
+      )}
+
+      <div className="masonry">
+        {images.map((img, i) => (
+          <div
+            key={i}
+            className="masonry-item cursor-pointer overflow-hidden rounded-xl shadow-sm hover:shadow-md transition border border-gray-200 dark:border-gray-700"
+          >
+            <img
+              src={img.src}
+              alt={img.author}
+              className="w-full h-auto block"
+              onClick={() => setSelectedImage(img)}
+            />
+            <div className="flex items-center justify-between p-2">
+              <div className="flex items-center space-x-2">
+                <span className="w-3 h-3 bg-gray-800 dark:bg-gray-200 rounded-full border border-gray-400 dark:border-gray-600"></span>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{img.author}</p>
+              </div>
+
+              {/* Heart icon next to business name */}
+              <button
+                onClick={(e) => { e.stopPropagation(); toggleSave(i); }}
+                className={`transition-colors ${
+                  savedImages.includes(i) ? "text-red-600" : "text-gray-400 hover:text-red-600"
+                }`}
+              >
+                <Bookmark size={18} />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
+
+      {selectedImage && (
+        <ImagePopup
+          src={selectedImage.src}
+          author={selectedImage.author}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </div>
   );
 }

@@ -66,7 +66,6 @@ export default function MobileCards() {
   };
   return (
     <div>
-      <Header />
       <div className="flex flex-col relative bg-white dark:bg-gray-900 ">
 
 
@@ -126,7 +125,6 @@ export default function MobileCards() {
           <DualLevelTabs />
         </div>
 
-        <AskArchinza />
       </div>
     </div>
   );
