@@ -10,7 +10,7 @@ import {
 import ChatHistory from "./ChatHistory";
 import AskArchinzaSearch from "./AskArchinzaSearch";
 import MasonryGrid from "./MasonaryGrid";
-import Saved from "./saved";
+import Saved from "./Saved";
 import BusinessChats from "./BusinessChats";
 import SettingsPanel from "./Settings";
 import MobileCards from "./Main";
