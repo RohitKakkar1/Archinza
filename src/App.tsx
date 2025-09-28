@@ -39,6 +39,7 @@ import LandingScreen from './components/AfterFeedback.tsx';
 import SearchResult from './components/personal_user/SearchResults/SearchResults.tsx';
 import SearchResultsPage from './components/personal_user/SearchResults/SearchResultsPage.tsx';
 import DemoPage from './components/personal_user/SearchResults/DemoPage.tsx';
+import Email from './components/Emailers/verify.tsx';
 
 function App() {
   return (
@@ -117,6 +118,7 @@ function App() {
 
             <Route path="/search-results-page" element={<SearchResultsPage />} />
             <Route path="/DemoPage" element={<DemoPage />} />
+            <Route path="/Email" element={<Email />} />
 
 
 
