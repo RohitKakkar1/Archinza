@@ -246,7 +246,7 @@ const HeroSection: React.FC = () => {
             <span className="and-text"> and </span>
             <span className="highlight">be found</span>
             <span className="subtitle">
-              at every step of your Design & Build journey.
+              at every step of your Design & Build Journey.
             </span>
           </h2>
           <p className="description">
