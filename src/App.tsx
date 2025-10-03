@@ -40,6 +40,7 @@ import SearchResult from './components/personal_user/SearchResults/SearchResults
 import SearchResultsPage from './components/personal_user/SearchResults/SearchResultsPage.tsx';
 import DemoPage from './components/personal_user/SearchResults/DemoPage.tsx';
 import Email from './components/Emailers/verify.tsx';
+import BusinessCarousel from './components/businessCarousel.tsx';
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
 
                   <WhosItFor />
                   <WebOffering />
+                  <BusinessCarousel />
                   <Bot />
                   <GetStarted /> 
                         <FAQ />
