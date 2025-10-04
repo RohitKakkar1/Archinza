@@ -1,8 +1,11 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";4
 import AskArchinzaStair from "../AskArchinzaStair";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchResult() {
+    const navigate = useNavigate();
+
   return (
     <div className="w-full max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-sm  font-sans">
       {/* Top image with back button */}
@@ -12,7 +15,8 @@ export default function SearchResult() {
           alt="Business Preview"
           className="w-full  object-cover"
         />
-        <button className="absolute top-4 left-4 bg-gray-200/70 hover:bg-gray-300 p-2 rounded-full">
+        <button className="absolute top-4 left-4 bg-gray-200/70 hover:bg-gray-300 p-2 rounded-full"       onClick={() => navigate("/search-results-page")}
+>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

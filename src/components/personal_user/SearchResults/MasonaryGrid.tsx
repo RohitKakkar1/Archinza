@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Bookmark } from "lucide-react"; // Heart icon
+import { Bookmark } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ImagePopup from "./ImagePopup";
 
 interface GalleryImage {
@@ -19,12 +20,23 @@ interface MasonryGridProps {
 
 export default function MasonryGrid({ images, filters }: MasonryGridProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
-  const [savedImages, setSavedImages] = useState<number[]>([]); // store saved image indexes
+  const [savedImages, setSavedImages] = useState<number[]>([]);
+  const navigate = useNavigate();
 
   const toggleSave = (index: number) => {
     setSavedImages((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
+  };
+
+  const handleImageClick = (img: GalleryImage) => {
+    if (window.innerWidth < 768) {
+      // mobile → navigate to /search-result
+      navigate("/search-result", { state: { image: img } });
+    } else {
+      // desktop → open popup
+      setSelectedImage(img);
+    }
   };
 
   return (
@@ -55,13 +67,18 @@ export default function MasonryGrid({ images, filters }: MasonryGridProps) {
               key={idx}
               className="flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-1 py-1 shadow-sm hover:shadow-md cursor-pointer transition"
             >
-              <img src={filter.src} alt={filter.label} className="w-6 h-6 rounded-full object-cover" />
+              <img
+                src={filter.src}
+                alt={filter.label}
+                className="w-6 h-6 rounded-full object-cover"
+              />
               <span className="text-sm text-gray-700 dark:text-gray-200">{filter.label}</span>
             </div>
           ))}
         </div>
       )}
 
+      {/* Masonry Grid */}
       <div className="masonry">
         {images.map((img, i) => (
           <div
@@ -72,7 +89,7 @@ export default function MasonryGrid({ images, filters }: MasonryGridProps) {
               src={img.src}
               alt={img.author}
               className="w-full h-auto block"
-              onClick={() => setSelectedImage(img)}
+              onClick={() => handleImageClick(img)}
             />
             <div className="flex items-center justify-between p-2">
               <div className="flex items-center space-x-2">
@@ -80,11 +97,16 @@ export default function MasonryGrid({ images, filters }: MasonryGridProps) {
                 <p className="text-sm text-gray-600 dark:text-gray-300">{img.author}</p>
               </div>
 
-              {/* Heart icon next to business name */}
+              {/* Save button */}
               <button
-                onClick={(e) => { e.stopPropagation(); toggleSave(i); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleSave(i);
+                }}
                 className={`transition-colors ${
-                  savedImages.includes(i) ? "text-red-600" : "text-gray-400 hover:text-red-600"
+                  savedImages.includes(i)
+                    ? "text-red-600"
+                    : "text-gray-400 hover:text-red-600"
                 }`}
               >
                 <Bookmark size={18} />
@@ -94,7 +116,8 @@ export default function MasonryGrid({ images, filters }: MasonryGridProps) {
         ))}
       </div>
 
-      {selectedImage && (
+      {/* Desktop: Popup */}
+      {selectedImage && window.innerWidth >= 768 && (
         <ImagePopup
           src={selectedImage.src}
           author={selectedImage.author}

@@ -13,11 +13,12 @@ import BottomBar from "./BottomBar";
 import { Pencil } from "lucide-react";
 import EditBusiness from "./EditBusiness";
 import BusinessStatus from "./BusinessStatus";
+import InsightsMobile from "../Chirmee";
 
 
 export default function DBMobile() {
-  const tabs = ["About", "Gallery", "PDFs", "Contact"];
-  const [active, setActive] = useState("About");
+  const tabs = ["Insights", "About", "Gallery", "PDFs", "Contact"];
+  const [active, setActive] = useState("Insights");
 
   // Refs for each section
   const sectionRefs: Record<string, React.RefObject<HTMLDivElement>> = {
@@ -27,6 +28,7 @@ export default function DBMobile() {
     Courses: useRef(null),
     Events: useRef(null),
     Contact: useRef(null),
+    Insights: useRef(null),
   };
 
   // Observe which section is in view
@@ -122,11 +124,14 @@ const handleTabClick = (tab: string) => {
         {/* Sections */}
         <div className="w-full lg:w-fit space-y-2">
 
+            <div id="Insights" ref={sectionRefs.Insights}>
           <BusinessStatus />
+          </div>
+
           <div id="About" ref={sectionRefs.About}>
             <EditBusiness />
           </div>
-          <BusinessTile />
+          {/* <BusinessTile /> */}
           <div id="Gallery" ref={sectionRefs.Gallery}>
             <Gallery />
           </div>
@@ -136,6 +141,7 @@ const handleTabClick = (tab: string) => {
           <div id="Contact" ref={sectionRefs.Contact}>
             <Contact />
           </div>
+
         </div>
 
         <BottomBar />

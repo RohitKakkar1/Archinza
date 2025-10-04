@@ -52,31 +52,7 @@ export default function BusinessCarousel() {
 
   return (
     <div className="w-full">
-<div className="flex items-center justify-between pb-4">
-  {/* Back Button */}
-  <button
-    onClick={() => window.history.back()}
-    className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-orange-500"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-      className="w-5 h-5"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-    Back
-  </button>
 
-  {/* Heading */}
-  <h2 className="font-medium dark:text-white text-lg">Insights for You</h2>
-
-  {/* Spacer to balance flex */}
-  <div className="w-10"></div>
-</div>
 
       {/* Carousel */}
       <div
